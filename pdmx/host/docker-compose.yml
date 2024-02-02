@@ -1,0 +1,23 @@
+version: '2.4'
+services:
+  pdmx:
+    restart: unless-stopped
+    image: ${REPOSITORY:-quay.io/telosalliance/pdmx}:${TAG:-latest}
+    container_name: pdmx-${INSTANCE_NAME}
+    environment:
+      STUDIO: ${INSTANCE_NAME}
+    network_mode: host
+    cap_add:
+      - SYS_NICE
+      - net_bind_service
+    volumes:
+      - /dev/log:/dev/log
+      - /opt/telos/pdmx-${INSTANCE_NAME}/config:/etc/pdmii
+      - /opt/telos/pdmx-${INSTANCE_NAME}/data:/var/opt/audio
+    tmpfs:
+      - /run/pdmx
+
+volumes:
+  data:
+  config:
+

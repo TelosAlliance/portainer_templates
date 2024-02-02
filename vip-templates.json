@@ -1,0 +1,70 @@
+{
+    "version": "2",
+    "templates": [
+      {
+        "type": 3,
+        "title": "Axia Altus (macvlan)",
+        "description": "Altus console with `macvlan` networking",
+        "categories": [
+          "axia",
+          "altus",
+          "macvlan"
+        ],
+        "platform": "linux",
+        "repository": {
+          "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+          "stackfile": "altus/macvlan/docker-compose.yml"
+        },
+        "env": [
+          {
+            "name": "TAG",
+            "label": "Software version tag",
+            "description": "Version of software. Leave blank to use default"
+          },
+          {
+            "name": "INSTANCE_NAME",
+            "label": "Container Name",
+            "description": "Set the container name, hostname, and studio name for an Altus"
+          },
+          {
+            "name": "IPV4_ADDRESS",
+            "label": "IPv4 Address",
+            "description": "IPv4 Address"
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "title": "Telos VXS (macvlan)",
+        "description": "Telos VXS VoIP Phone System with `macvlan` networking",
+        "categories": [
+          "telos",
+          "vx",
+          "macvlan"
+        ],
+        "platform": "linux",
+        "repository": {
+          "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+          "stackfile": "vxs/macvlan/docker-compose.yml"
+        },
+        "env": [
+          {
+            "name": "TAG",
+            "label": "Software version tag",
+            "description": "Version of software. Leave blank to use default"
+          },
+          {
+            "name": "INSTANCE_NAME",
+            "label": "Container Name",
+            "description": "Set the container name, and hostname"
+          },
+          {
+            "name": "IPV4_ADDRESS",
+            "label": "IPv4 Address",
+            "description": "IPv4 Address"
+          }
+        ]
+      }
+    ]
+  }
+  

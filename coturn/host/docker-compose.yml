@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  coturn:
+    restart: unless-stopped
+    image: ${REPOSITORY:-quay.io/telosalliance/coturn}:${TAG:-latest}
+    command: --log-file=stdout --realm=$$DomainName --server-name=$$DomainName --fingerprint --external-ip=$${ExternalIP:-$$(detect-external-ip)}/$$InternalIP --relay-ip=$${ExternalIP:-$$(detect-external-ip)}/$$InternalIP --min-port=$$MinimumPort --max-port=$$MaximumPort --user=$$TurnUsername:$$TurnPassword --lt-cred-mech --stale-nonce=0 --channel-lifetime=0
+    container_name: coturn-${INSTANCE_NAME}
+    hostname: coturn-${INSTANCE_NAME}
+    network_mode: host
+    environment:
+      - DomainName=${DOMAINNAME}
+      - VIPInternalIP=${HOSTIP}
+      - VIPExternalIP=${PUBLICIP}
+      - TurnUsername=${TURNUSERNAME}
+      - TurnPassword=${TURNPASSWORD}
+      - MinimumPort=${MINIMUMPORT:-49152} 
+      - MaximumPort=${MAXIMUMPORT:-65535}
+    volumes:
+      - /opt/telos/coturn-${INSTANCE_NAME}/coturn_data:/var/lib/coturn:z
+      - /opt/telos/nginx/ssl:/certs:ro
+volumes:
+  coturn_data:

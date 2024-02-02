@@ -1,0 +1,34 @@
+version: '2.4'
+services:
+  altus:
+    restart: unless-stopped
+    image: ${REPOSITORY:-quay.io/telosalliance/altus}:${TAG:-latest}
+    sysctls:
+      - net.ipv4.igmp_max_memberships=256
+    container_name: altus-${INSTANCE_NAME}
+    hostname: altus-${INSTANCE_NAME}
+    networks:
+      telosmacvlan:
+        ipv4_address: ${AOIP_IPV4_ADDRESS}
+      ext1macvlan:
+        ipv4_address: ${EXT_IPV4_ADDRESS}
+    volumes:
+      - /opt/telos/altus-${INSTANCE_NAME}/config:/config
+      - /opt/telos/altus-${INSTANCE_NAME}/logs:/var/logs
+    cap_add:
+      - SYS_NICE
+      - NET_ADMIN
+    environment:
+      - NDI_CONFIG_DIR=/root/.newtek
+
+volumes:
+  config:
+
+
+networks:
+  telosmacvlan:
+    external:
+      name: telosmacvlan
+  ext1macvlan:
+    external:
+      name: ext1macvlan

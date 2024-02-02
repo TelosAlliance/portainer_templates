@@ -1,0 +1,472 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 3,
+      "title": "PTP4L (host)",
+      "description": "Precision Time Protocol Daemon for Linux with `host` networking",
+      "categories": [
+        "linux",
+        "open-source",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "ptp4l/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "PTP4L_ARGS",
+          "label": "ptp4l command line args",
+          "description": "Command line arguments for ptp4l. Details here: linux.die.net/man/8/ptp4l. Leave blank if unsure"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "PTP4L (macvlan)",
+      "description": "Precision Time Protocol Daemon for Linux with `macvlan` networking",
+      "categories": [
+        "linux",
+        "open-source",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "ptp4l/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "PTP4L_ARGS",
+          "label": "ptp4l command line args",
+          "description": "Command line arguments for ptp4l. Details here: linux.die.net/man/8/ptp4l. Leave blank if unsure"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "IPv4 Address"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Axia Altus (host)",
+      "description": "Altus console with `host` networking",
+      "categories": [
+        "axia",
+        "altus",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "altus/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Axia Altus (macvlan)",
+      "description": "Altus console with `macvlan` networking",
+      "categories": [
+        "axia",
+        "altus",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "altus/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "IPv4 Address"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Axia Altus (dual-macvlan)",
+      "description": "Altus console with `dual-macvlan` networking",
+      "categories": [
+        "axia",
+        "altus",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "altus/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "AOIP_IPV4_ADDRESS",
+          "label": "AOIP IP Address",
+          "description": "IP Address for the AoIP Network"
+        },
+        {
+          "name": "EXT_IPV4_ADDRESS",
+          "label": "External IP Address",
+          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Telos VXS (host)",
+      "description": "Telos VXS VoIP Phone System with `host` networking",
+      "categories": [
+        "telos",
+        "vx",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "vxs/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IFACE_AOIP_SYNC",
+          "label": "Clock Source Interface",
+          "description": "Sets the interface we will listens for clock on"
+        }               
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Telos VXS (macvlan)",
+      "description": "Telos VXS VoIP Phone System with `macvlan` networking",
+      "categories": [
+        "telos",
+        "vx",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "vxs/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "IPv4 Address"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Telos VXS (dual-macvlan)",
+      "description": "Telos VXS VoIP Phone System with `macvlan` networking",
+      "categories": [
+        "telos",
+        "vx",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "vxs/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "AOIP_IPV4_ADDRESS",
+          "label": "AOIP IP Address",
+          "description": "IP Address for the AoIP Network"
+        },
+        {
+          "name": "EXT_IPV4_ADDRESS",
+          "label": "External IP Address",
+          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza (host)",
+      "description": "Forza audio processor with `host` networking",
+      "categories": [
+        "omnia",
+        "forza",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "forza/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "EX_AOIP_TASK_RATE",
+          "label": "Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "EX_RT_CPU",
+          "label": "Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza (macvlan)",
+      "description": "Forza audio processor with `macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "forza/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "Static IPv4 address to assign to the container. REQUIRED"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "EX_AOIP_TASK_RATE",
+          "label": "Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "EX_RT_CPU",
+          "label": "Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza (dual-macvlan)",
+      "description": "Forza audio processor with `macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "forza/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "AOIP_IPV4_ADDRESS",
+          "label": "AOIP IP Address",
+          "description": "IP Address for the AoIP Network"
+        },
+        {
+          "name": "EXT_IPV4_ADDRESS",
+          "label": "External IP Address",
+          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "EX_AOIP_TASK_RATE",
+          "label": "Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "EX_RT_CPU",
+          "label": "Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    }
+  ]
+}

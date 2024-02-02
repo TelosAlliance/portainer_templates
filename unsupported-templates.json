@@ -1,0 +1,43 @@
+[
+    {
+        "type": 3,
+        "title": "Grafana/Prometheus/Loki Stack",
+        "description": "Open source logging stack based on Grafana",
+        "categories": [
+            "open-source",
+            "linux"
+        ],
+        "platform": "linux",
+        "repository": {
+            "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+            "stackfile": "grafana/docker-compose.yml"
+        }
+    },
+    {
+        "type": 3,
+        "title": "Infinity Intercom (macvlan)",
+        "description": "Infinity Intercom with `macvlan` networking",
+        "categories": [
+            "infinity",
+            "intercom",
+            "macvlan"
+        ],
+        "platform": "linux",
+        "repository": {
+            "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+            "stackfile": "intercom/macvlan/docker-compose.yml"
+        },
+        "env": [
+            {
+                "name": "TAG",
+                "label": "Software version tag",
+                "description": "Version of software. Leave blank to use default"
+            },
+            {
+                "name": "IPV4_ADDRESS",
+                "label": "IPv4 Address",
+                "description": "IPv4 Address"
+            }
+        ]
+    }
+]

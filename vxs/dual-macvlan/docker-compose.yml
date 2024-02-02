@@ -1,0 +1,40 @@
+version: '2.4'
+services:
+  vxs:
+    restart: unless-stopped
+    image: ${REPOSITORY:-quay.io/telosalliance/vxs}:${TAG:-latest}
+    container_name: vxs-${INSTANCE_NAME}
+    hostname: vxs-${INSTANCE_NAME}
+    networks:
+      telosmacvlan:
+        ipv4_address: ${AOIP_IPV4_ADDRESS}
+      ext1macvlan:
+        ipv4_address: ${EXT_IPV4_ADDRESS}
+    sysctls:
+      fs.mqueue.msg_max: 1024
+    ulimits:
+      rtprio: 60
+      memlock: -1
+    cap_drop:
+      - all
+    cap_add:
+      - net_bind_service
+    user: ${TAC_UID:-0}:${TAC_GID:-0}
+    volumes:
+      - /dev/log:/dev/log
+      - /opt/telos/vxs-${INSTANCE_NAME}/config:/etc/telos_vx
+      - /opt/telos/vxs-${INSTANCE_NAME}/data:/var/lib/telos_vx
+    tmpfs:
+      - /run/telos_vx
+
+volumes:
+  data:
+  config:
+
+networks:
+  telosmacvlan:
+    external:
+      name: telosmacvlan
+  ext1macvlan:
+    external:
+      name: ext1macvlan

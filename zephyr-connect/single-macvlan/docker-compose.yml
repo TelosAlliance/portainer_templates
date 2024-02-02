@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  zephyr_connect:
+    restart: unless-stopped
+    image: ${REPOSITORY:-quay.io/telosalliance/zephyr-connect}:${TAG:-latest}
+    container_name: zephyr_connect-${INSTANCE_NAME}
+    command: "/bin/ips-start"
+    cap_add:
+      - SYS_NICE
+      - NET_RAW
+      - NET_ADMIN
+      - NET_BIND_SERVICE
+    networks:
+      telosmacvlan:
+          ipv4_address: ${IPV4_ADDRESS}
+    environment:
+     - IFACE_AOIP=${IFACE:-eth0}
+     - IFACE_EXT=${IFACE:-eth0}
+    volumes:
+     - /opt/telos/zephyr_connect-${INSTANCE_NAME}/ZephConnConfig:/etc/Axia/EngConf
+     - /opt/telos/zephyr_connect-${INSTANCE_NAME}/ZephConnData:/var/lib/ZephConn
+    tmpfs:
+     - /tmp
+    sysctls:
+      net.ipv4.igmp_max_memberships: 256
+
+
+networks:
+  telosmacvlan:
+    external:
+      name: telosmacvlan
+volumes:
+    ZephConnConfig:
+    ZephConnData:
+
+# NOTE: IFACE_AOIP and IFACE_EXT are set to the same interface as single macvlan system only has 1 network interface. This means a client must stream, and to local AoIP on the same interface. As of 3 March 2023 docker defaults to eth0 in the container thus this has been assigned as the default value it the user does not set one. As of 3 March 2023 the default value for the network interfaces has not been tested. 

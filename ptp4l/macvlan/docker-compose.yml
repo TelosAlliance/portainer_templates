@@ -1,0 +1,17 @@
+version: '2.4'
+services:
+  ptp4l:
+    restart: unless-stopped
+    image: ${REPOSITORY:-telosalliance/ptp4l}:${TAG:-latest}
+    container_name: ptp4l-${INSTANCE_NAME}
+    privileged: true
+    volumes:
+      - /opt/telos/ptp-${INSTANCE_NAME}/dev/log:/dev/log
+    networks:
+      telosmacvlan:
+        ipv4_address: ${IPV4_ADDRESS}
+    command: ${PTP4L_ARGS}
+networks:
+  telosmacvlan:
+    external:
+      name: telosmacvlan
