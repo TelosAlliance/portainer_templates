@@ -84,8 +84,8 @@ By default products that can use templates have the appropriate template in plac
 
     | Template Name | URL |
     |---------------|-----|
-    |templates-v2|<https://github.com/TelosAlliance/portainer_templates/blob/main/templates-v2.json>|
-    |vip-templates|<https://github.com/TelosAlliance/portainer_templates/blob/main/vip-templates.json> |
+    |templates-v2|<https://github.com/TelosAlliance/portainer_templates/raw/main/templates-v2.json>|
+    |vip-templates|<https://github.com/TelosAlliance/portainer_templates/raw/main/vip-templates.json> |
 
 1. Press save
 1. Navigate to the App Template menu
