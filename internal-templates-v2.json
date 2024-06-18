@@ -12,7 +12,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "beacon/macvlan/docker-compose.yml"
       },
       "env": [
@@ -44,7 +44,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "coturn/host/docker-compose.yml"
       },
       "env": [
@@ -106,7 +106,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "ptp4l/host/docker-compose.yml"
       },
       "env": [
@@ -138,7 +138,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "ptp4l/macvlan/docker-compose.yml"
       },
       "env": [
@@ -175,7 +175,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "pdmx/host/docker-compose.yml"
       },
       "env": [
@@ -202,7 +202,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "pdmx/macvlan/docker-compose.yml"
       },
       "env": [
@@ -234,7 +234,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "iqs/host/docker-compose.yml"
       },
       "env": [
@@ -261,7 +261,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "iqs/macvlan/docker-compose.yml"
       },
       "env": [
@@ -293,7 +293,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "altus/host/docker-compose.yml"
       },
       "env": [
@@ -320,7 +320,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "altus/macvlan/docker-compose.yml"
       },
       "env": [
@@ -352,7 +352,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "altus/dual-macvlan/docker-compose.yml"
       },
       "env": [
@@ -389,7 +389,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "link/host/docker-compose.yml"
       },
       "env": [
@@ -431,7 +431,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "link/macvlan/docker-compose.yml"
       },
       "env": [
@@ -473,7 +473,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "vxs/host/docker-compose.yml"
       },
       "env": [
@@ -500,7 +500,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "vxs/macvlan/docker-compose.yml"
       },
       "env": [
@@ -532,7 +532,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "vxs/dual-macvlan/docker-compose.yml"
       },
       "env": [
@@ -569,7 +569,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "vxs/host/docker-compose.yml"
       },
       "env": [
@@ -606,7 +606,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "vxs/macvlan/docker-compose.yml"
       },
       "env": [
@@ -648,7 +648,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "vxs/macvlan/docker-compose.yml"
       },
       "env": [
@@ -695,7 +695,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza/host/docker-compose.yml"
       },
       "env": [
@@ -757,7 +757,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza/macvlan/docker-compose.yml"
       },
       "env": [
@@ -824,7 +824,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza/macvlan/docker-compose.yml"
       },
       "env": [
@@ -896,7 +896,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza/host/docker-compose.yml"
       },
       "env": [
@@ -968,7 +968,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza/macvlan/docker-compose.yml"
       },
       "env": [
@@ -1045,7 +1045,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza/macvlan/docker-compose.yml"
       },
       "env": [
@@ -1127,7 +1127,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "vero/host/docker-compose.yml"
       },
       "env": [
@@ -1189,7 +1189,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "vero/macvlan/docker-compose.yml"
       },
       "env": [
@@ -1256,7 +1256,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "zephyr-connect/host/docker-compose.yml"
       },
       "env": [
@@ -1293,7 +1293,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "zephyr-connect/single-macvlan/docker-compose.yml"
       },
       "env": [
@@ -1330,7 +1330,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "zephyr-connect/dual-macvlan/docker-compose.yml"
       },
       "env": [
