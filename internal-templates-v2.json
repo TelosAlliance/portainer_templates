@@ -1365,6 +1365,225 @@
           "description": "Network interface on host system streaming and web browser traffic are routed to. Example eno1 or eth0. One interface is REQUIRED. It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done with a comma delinated list. Example eno1,eno2"
         }
       ]
+    },
+    {
+      "type": 3,
+      "title": "WebRTC Service (macvlan)",
+      "description": "Proxy service connected to the telosmacvlan network",
+      "categories": [
+        "linux",
+        "open-source",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "webrtc-service/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "NGINX_TAG",
+          "label": "Software version tag for NGINX",
+          "description": "Version of NGINX software. Leave blank to use default"
+        },
+        {
+          "name": "NGINX_TELOSMACVLAN",
+          "label": "NGINX AoIP IP address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "TAP_TAG",
+          "label": "Software version tag for Telos Auto Proxy",
+          "description": "Version of Telos Auto Proxy software. Leave blank to use default"
+        },
+        {
+          "name": "ACME_TAG",
+          "label": "Software version tag for ACME",
+          "description": "Version of ACME. Leave blank to use default"
+        },
+        {
+          "name": "ACME_TELOSMACVLAN",
+          "label": "ACME AoIP IP address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "DOMAINNAME",
+          "label": "Domain Name",
+          "description": "Domain a certification will be requested for."
+        },
+        {
+          "name": "CERT_EMAIL",
+          "label": "Email",
+          "description": "Email certificate renewal notices will be sent to."
+        },
+        {
+          "name": "CERT_MODE",
+          "label": "Certificate Mode",
+          "description": "Sets whether ACME will pull a certification or just test. production - will pull a cert. staging - will test a cert. This template defaults to production."
+        },
+        {
+          "name": "COTURN_TAG",
+          "label": "Coturn Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "COTURN_TELOSMACVLAN",
+          "label": "Coturn AoIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "PUBLICIP",
+          "label": "Public IP",
+          "description": "The Public IP Address the network this host is connected to."
+        },
+        {
+          "name": "TURNUSERNAME",
+          "label": "Turn Username",
+          "description": "Username that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "TURNPASSWORD",
+          "label": "Turn Password",
+          "description": "Password that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "MINIMUMPORT",
+          "label": "Minimum Turn Port",
+          "description": "Lowest number port used for turn connection. Leave this blank to use the default port number (49152) which works with most firewalls."
+        },
+        {
+          "name": "MAXIMUMPORT",
+          "label": "Maximum Turn Port",
+          "description": "Highest number port used for turn connection. Leave this blank to use the default port number (65535) which works with most firewalls."
+        },
+        {
+          "name": "BEACON_TAG",
+          "label": "Beacon Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "BEACON_TELOSMACVLAN",
+          "label": "Beacon AoIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "WebRTC Service (dual macvlan)",
+      "description": "Proxy service  web server connect to the ext1macvlan and telosmacvlan network",
+      "categories": [
+        "linux",
+        "open-source",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "webrtc-service/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "NGINX_TAG",
+          "label": "Software version tag for NGINX",
+          "description": "Version of NGINX software. Leave blank to use default"
+        },
+        {
+          "name": "NGINX_EXT1MACVLAN",
+          "label": "NGINX External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "NGINX_TELOSMACVLAN",
+          "label": "NGINX AoIP IP address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "TAP_TAG",
+          "label": "Software version tag for Telos Auto Proxy",
+          "description": "Version of Telos Auto Proxy software. Leave blank to use default"
+        },
+        {
+          "name": "ACME_TAG",
+          "label": "Software version tag for ACME",
+          "description": "Version of ACME. Leave blank to use default"
+        },
+        {
+          "name": "ACME_EXT1MACVLAN",
+          "label": "ACME External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "DOMAINNAME",
+          "label": "Domain Name",
+          "description": "Domain a certification will be requested for."
+        },
+        {
+          "name": "CERT_EMAIL",
+          "label": "Email",
+          "description": "Email certificate renewal notices will be sent to."
+        },
+        {
+          "name": "CERT_MODE",
+          "label": "Certificate Mode",
+          "description": "Sets whether ACME will pull a certification or just test. production - will pull a cert. staging - will test a cert. This template defaults to production."
+        },
+        {
+          "name": "COTURN_TAG",
+          "label": "Coturn Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "COTURN_EXT1MACVLAN",
+          "label": "Coturn External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "PUBLICIP",
+          "label": "Public IP",
+          "description": "The Public IP Address the network this host is connected to."
+        },
+        {
+          "name": "TURNUSERNAME",
+          "label": "Turn Username",
+          "description": "Username that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "TURNPASSWORD",
+          "label": "Turn Password",
+          "description": "Password that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "MINIMUMPORT",
+          "label": "Minimum Turn Port",
+          "description": "Lowest number port used for turn connection. Leave this blank to use the default port number (49152) which works with most firewalls."
+        },
+        {
+          "name": "MAXIMUMPORT",
+          "label": "Maximum Turn Port",
+          "description": "Highest number port used for turn connection. Leave this blank to use the default port number (65535) which works with most firewalls."
+        },
+        {
+          "name": "BEACON_TAG",
+          "label": "Beacon Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "BEACON_TELOSMACVLAN",
+          "label": "Beacon AoIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        }
+      ]
     }
   ]
 }
