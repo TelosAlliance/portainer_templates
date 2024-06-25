@@ -1677,6 +1677,298 @@
     },
     {
       "type": 3,
+      "title": "Beacon (macvlan)",
+      "description": "Beacon with `macvlan` networking",
+      "categories": [
+        "telos",
+        "beacon",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "beacon/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "IPv4 Address"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Container Proxy Service (macvlan)",
+      "description": "Proxy service connected to the telosmacvlan network",
+      "categories": [
+        "linux",
+        "open-source",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "container-proxy-service/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "NGINX_TAG",
+          "label": "Software version tag for NGINX",
+          "description": "Version of NGINX software. Leave blank to use default"
+        },
+        {
+          "name": "NGINX_TELOSMACVLAN",
+          "label": "NGINX AoIP IP address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "TAP_TAG",
+          "label": "Software version tag for Telos Auto Proxy",
+          "description": "Version of Telos Auto Proxy software. Leave blank to use default"
+        },
+        {
+          "name": "ACME_TAG",
+          "label": "Software version tag for ACME",
+          "description": "Version of ACME. Leave blank to use default"
+        },
+        {
+          "name": "ACME_TELOSMACVLAN",
+          "label": "ACME AoIP IP address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "DOMAINNAME",
+          "label": "Domain Name",
+          "description": "Domain a certification will be requested for."
+        },
+        {
+          "name": "CERT_EMAIL",
+          "label": "Email",
+          "description": "Email certificate renewal notices will be sent to."
+        },
+        {
+          "name": "CERT_MODE",
+          "label": "Certificate Mode",
+          "description": "Sets whether ACME will pull a certification or just test. production - will pull a cert. staging - will test a cert. This template defaults to production."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Container Proxy Service (dual macvlan)",
+      "description": "Proxy service  web server connect to the ext1macvlan and telosmacvlan network",
+      "categories": [
+        "linux",
+        "open-source",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "container-proxy-service/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "NGINX_TAG",
+          "label": "Software version tag for NGINX",
+          "description": "Version of NGINX software. Leave blank to use default"
+        },
+        {
+          "name": "NGINX_EXT1MACVLAN",
+          "label": "NGINX External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "NGINX_TELOSMACVLAN",
+          "label": "NGINX AoIP IP address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "TAP_TAG",
+          "label": "Software version tag for Telos Auto Proxy",
+          "description": "Version of Telos Auto Proxy software. Leave blank to use default"
+        },
+        {
+          "name": "ACME_TAG",
+          "label": "Software version tag for ACME",
+          "description": "Version of ACME. Leave blank to use default"
+        },
+        {
+          "name": "ACME_EXT1MACVLAN",
+          "label": "ACME External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "DOMAINNAME",
+          "label": "Domain Name",
+          "description": "Domain a certification will be requested for."
+        },
+        {
+          "name": "CERT_EMAIL",
+          "label": "Email",
+          "description": "Email certificate renewal notices will be sent to."
+        },
+        {
+          "name": "CERT_MODE",
+          "label": "Certificate Mode",
+          "description": "Sets whether ACME will pull a certification or just test. production - will pull a cert. staging - will test a cert. This template defaults to production."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Coturn (host)",
+      "description": "Local STUN and TURN server to support WebRTC enabled products",
+      "categories": [
+        "linux",
+        "open-source",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "coturn/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "DOMAINNAME",
+          "label": "Domain Name for host system",
+          "description": "This is the Domain Name you have assigned for the Proxy Server"
+        },
+        {
+          "name": "HOSTIP",
+          "label": "Host IP",
+          "description": "The IP Address of the NIC on your host system that is routed to the internet."
+        },
+        {
+          "name": "PUBLICIP",
+          "label": "Public IP",
+          "description": "The Public IP Address the network this host is connected to."
+        },
+        {
+          "name": "TURNUSERNAME",
+          "label": "Turn Username",
+          "description": "Username that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "TURNPASSWORD",
+          "label": "Turn Password",
+          "description": "Password that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "MINIMUMPORT",
+          "label": "Minimum Turn Port",
+          "description": "Lowest number port used for turn connection. Leave this blank to use the default port number (49152) which works with most firewalls."
+        },
+        {
+          "name": "MAXIMUMPORT",
+          "label": "Maximum Turn Port",
+          "description": "Highest number port used for turn connection. Leave this blank to use the default port number (65535) which works with most firewalls."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "PTP4L (host)",
+      "description": "Precision Time Protocol Daemon for Linux with `host` networking",
+      "categories": [
+        "linux",
+        "open-source",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "ptp4l/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "PTP4L_ARGS",
+          "label": "ptp4l command line args",
+          "description": "Command line arguments for ptp4l. Details here: linux.die.net/man/8/ptp4l. Leave blank if unsure"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "PTP4L (macvlan)",
+      "description": "Precision Time Protocol Daemon for Linux with `macvlan` networking",
+      "categories": [
+        "linux",
+        "open-source",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "ptp4l/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "PTP4L_ARGS",
+          "label": "ptp4l command line args",
+          "description": "Command line arguments for ptp4l. Details here: linux.die.net/man/8/ptp4l. Leave blank if unsure"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "IPv4 Address"
+        }
+      ]
+    },
+    {
+      "type": 3,
       "title": "WebRTC Service (macvlan)",
       "description": "Proxy service connected to the telosmacvlan network",
       "categories": [
