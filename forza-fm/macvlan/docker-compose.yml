@@ -1,7 +1,7 @@
 version: '3'
 services:
   forza:
-    image: ${REPOSITORY:-quay.io/telosalliance/forza}:${TAG:-latest}
+    image: ${REPOSITORY:-quay.io/telosalliance/forza-fm}:${TAG:-latest}
     container_name: forza-${INSTANCE_NAME}
     hostname: forza-${INSTANCE_NAME}
     restart: unless-stopped
@@ -15,15 +15,13 @@ services:
     user: ${TAC_UID:-0}:${TAC_GID:-0}
     networks:
       telosmacvlan:
-        ipv4_address: ${AOIP_IPV4_ADDRESS}
-      ext1macvlan:
-        ipv4_address: ${EXT_IPV4_ADDRESS}
+        ipv4_address: ${IPV4_ADDRESS}
     environment:
-      - IFACE_AOIP=${IFACE_AOIP:-eth1}
+      - IFACE_AOIP=${IFACE_AOIP:-eth0}
       - EX_CLOCK_SOURCE=${EX_CLOCK_SOURCE:-ptp-snooping}
       - EX_AOIP_CLOCK=${EX_AOIP_CLOCK:-0}
       - EX_PTP_DOMAIN=${EX_PTP_DOMAIN:-0}
-      - EX_AOIP_TASK_RATE=${EX_AOIP_TASK_RATE:-1000}
+      - EX_AOIP_TASK_RATE=${EX_AOIP_TASK_RATE:-200}
       - EX_RT_CPU
       - HTTP_PORT=${HTTP_PORT:-80}
     volumes:
@@ -36,6 +34,3 @@ networks:
   telosmacvlan:
     external:
       name: telosmacvlan
-  ext1macvlan:
-    external:
-      name: ext1macvlan

@@ -24,7 +24,7 @@ services:
       - HTTP_PORT=${HTTP_PORT:-80}
       - IFACE_WEBUI
     volumes:
-      - /opt/telos/forza-${INSTANCE_NAME}/forza_data:/forza_data
+      - /opt/telos/forza-${INSTANCE_NAME}/forza_data:/data
 
 volumes:
   forza_data:

@@ -3,169 +3,6 @@
   "templates": [
     {
       "type": 3,
-      "title": "Beacon (macvlan)",
-      "description": "Beacon with `macvlan` networking",
-      "categories": [
-        "telos",
-        "beacon",
-        "macvlan"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "beacon/macvlan/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "TAG",
-          "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
-        },
-        {
-          "name": "IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "IPv4 Address"
-        }
-      ]
-    },
-    {
-      "type": 3,
-      "title": "Coturn (host)",
-      "description": "Local STUN and TURN server to support WebRTC enabled products",
-      "categories": [
-        "linux",
-        "open-source",
-        "host"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "coturn/host/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "TAG",
-          "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
-        },
-        {
-          "name": "DOMAINNAME",
-          "label": "Domain Name for host system",
-          "description": "This is the Domain Name you have assigned for the Proxy Server"
-        },
-        {
-          "name": "HOSTIP",
-          "label": "Host IP",
-          "description": "The IP Address of the NIC on your host system that is routed to the internet."
-        },
-        {
-          "name": "PUBLICIP",
-          "label": "Public IP",
-          "description": "The Public IP Address the network this host is connected to."
-        },
-        {
-          "name": "TURNUSERNAME",
-          "label": "Turn Username",
-          "description": "Username that is used for authentication when TURN Connections are being made."
-        },
-        {
-          "name": "TURNPASSWORD",
-          "label": "Turn Password",
-          "description": "Password that is used for authentication when TURN Connections are being made."
-        },
-        {
-          "name": "MINIMUMPORT",
-          "label": "Minimum Turn Port",
-          "description": "Lowest number port used for turn connection. Leave this blank to use the default port number (49152) which works with most firewalls."
-        },
-        {
-          "name": "MAXIMUMPORT",
-          "label": "Maximum Turn Port",
-          "description": "Highest number port used for turn connection. Leave this blank to use the default port number (65535) which works with most firewalls."
-        }
-      ]
-    },
-    {
-      "type": 3,
-      "title": "PTP4L (host)",
-      "description": "Precision Time Protocol Daemon for Linux with `host` networking",
-      "categories": [
-        "linux",
-        "open-source",
-        "host"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "ptp4l/host/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "TAG",
-          "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
-        },
-        {
-          "name": "PTP4L_ARGS",
-          "label": "ptp4l command line args",
-          "description": "Command line arguments for ptp4l. Details here: linux.die.net/man/8/ptp4l. Leave blank if unsure"
-        }
-      ]
-    },
-    {
-      "type": 3,
-      "title": "PTP4L (macvlan)",
-      "description": "Precision Time Protocol Daemon for Linux with `macvlan` networking",
-      "categories": [
-        "linux",
-        "open-source",
-        "macvlan"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "ptp4l/macvlan/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "TAG",
-          "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
-        },
-        {
-          "name": "PTP4L_ARGS",
-          "label": "ptp4l command line args",
-          "description": "Command line arguments for ptp4l. Details here: linux.die.net/man/8/ptp4l. Leave blank if unsure"
-        },
-        {
-          "name": "IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "IPv4 Address"
-        }
-      ]
-    },
-    {
-      "type": 3,
       "title": "25-Seven PDMX (host)",
       "description": "PDMX Program Delay Manager with `host` networking",
       "categories": [
@@ -686,7 +523,128 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza (host)",
+      "title": "Telos Zephyr Connect (host)",
+      "description": "Zephyr Connect Codec with `host` networking",
+      "categories": [
+        "telos",
+        "zephyr connect",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "zephyr-connect/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Network interface on the host sytem AoIP traffic is routed to.Example eno1, or eth0. REQUIRED"
+        },
+        {
+          "name": "IFACE_EXT",
+          "label": "IFACE_EXT",
+          "description": "Network interface on host system streaming and web browser traffic are routed to. Example eno1 or eth0. One interface is REQUIRED. It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done with a comma delinated list. Exampl eno1,eno2  "
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Telos Zephyr Connect (macvlan)",
+      "description": "Zephyr Connect Codec with `single macvlan` networking",
+      "categories": [
+        "telos",
+        "zephyr connect",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "zephyr-connect/single-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "Static IPv4 address to assign to the container. REQUIRED"
+        },
+        {
+          "name": "IFACE",
+          "label": "IFACE",
+          "description": "Network interface the docker container connects to on macvlan. If ensure leave blank"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Telos Zephyr Connect (dual-macvlan)",
+      "description": "Zephyr Connect Codec with `dual macvlan` networking",
+      "categories": [
+        "telos",
+        "zephyr connect",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "zephyr-connect/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "AOIP_IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "Static IPv4 address to assign to the AoIP interface of the container. REQUIRED"
+        },
+        {
+          "name": "EXT_IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "Static IPv4 address to assign to the external interface of the container. REQUIRED"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Network interface AoIP traffic is routed to. Example eno1, or eth0. REQUIRED"
+        },
+        {
+          "name": "IFACE_EXT",
+          "label": "IFACE_EXT",
+          "description": "Network interface on host system streaming and web browser traffic are routed to. Example eno1 or eth0. One interface is REQUIRED. It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done with a comma delinated list. Example eno1,eno2"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza HDS (host)",
       "description": "Forza audio processor with `host` networking",
       "categories": [
         "omnia",
@@ -748,7 +706,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza (macvlan)",
+      "title": "Omnia Forza HDS (macvlan)",
       "description": "Forza audio processor with `macvlan` networking",
       "categories": [
         "omnia",
@@ -816,7 +774,7 @@
     {
       "type": 3,
       "title": "Omnia Forza (dual-macvlan)",
-      "description": "Forza audio processor with `macvlan` networking",
+      "description": "Forza audio processor with `dual-macvlan` networking",
       "categories": [
         "omnia",
         "forza",
@@ -887,7 +845,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza Non-Root (host)",
+      "title": "Omnia Forza HDS Non-Root (host)",
       "description": "Forza audio processor with `host` networking",
       "categories": [
         "omnia",
@@ -959,7 +917,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza Non-Root (macvlan)",
+      "title": "Omnia Forza HDS Non-Root (macvlan)",
       "description": "Forza audio processor with `macvlan` networking",
       "categories": [
         "omnia",
@@ -1037,7 +995,7 @@
     {
       "type": 3,
       "title": "Omnia Forza Non-Root (dual-macvlan)",
-      "description": "Forza audio processor with `macvlan` networking",
+      "description": "Forza audio processor with `dual-macvlan` networking",
       "categories": [
         "omnia",
         "forza",
@@ -1113,6 +1071,478 @@
           "name": "TAC_GID",
           "label": "Group ID",
           "description": "Set the Group ID for the non-root user. Leaving this blank will result in the root user being used."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza FM (macvlan)",
+      "description": "Forza FM audio processor with `macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_template",
+        "stackfile": "forza-fm/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "Static IPv4 address to assign to the container. REQUIRED"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "EX_AOIP_TASK_RATE",
+          "label": "Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "EX_RT_CPU",
+          "label": "Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza FM (dual-macvlan)",
+      "description": "Forza FM audio processor with `macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_template",
+        "stackfile": "forza-fm/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "AOIP_IPV4_ADDRESS",
+          "label": "AOIP IP Address",
+          "description": "IP Address for the AoIP Network"
+        },
+        {
+          "name": "EXT_IPV4_ADDRESS",
+          "label": "External IP Address",
+          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "EX_AOIP_TASK_RATE",
+          "label": "Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "EX_RT_CPU",
+          "label": "Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza FM Service (macvlan)",
+      "description": "Forza FM audio processor with `macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza-fm",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_template",
+        "stackfile": "forza-fm-service/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "FORZA_TAG",
+          "label": "Forza FM Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "FORZA_TELOSMACVLAN",
+          "label": "Forza FM AOIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "FORZA_EX_RT_CPU",
+          "label": "Forza Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "FORZA_AOIP_TASK_RATE",
+          "label": "Forza Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "FORZA_HTTP_PORT",
+          "label": "Forza Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        },
+        {
+          "name": "FM_TRANSPORT_TAG",
+          "label": "Forza FM Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "FM_TRANSPORT_TELOSMACVLAN",
+          "label": "FM Transport AOIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "FM_TRANSPORT_AOIP_TASK_RATE",
+          "label": "FM Transport Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "FM_TRANSPORT_EX_RT_CPU",
+          "label": "FM Transport Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which FM Transport will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "FM_TRANSPORT_HTTP_PORT",
+          "label": "FM Transport Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza FM Service (dual-macvlan)",
+      "description": "Forza FM audio processor with `dual-macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza-fm",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_template",
+        "stackfile": "forza-fm-service/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "FORZA_TAG",
+          "label": "Forza FM Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "FORZA_EXT1MACVLAN",
+          "label": "Forza FM External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "FORZA_TELOSMACVLAN",
+          "label": "Forza FM AOIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "FORZA_EX_RT_CPU",
+          "label": "Forza Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "FORZA_AOIP_TASK_RATE",
+          "label": "Forza Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "FORZA_HTTP_PORT",
+          "label": "Forza Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        },
+        {
+          "name": "FM_TRANSPORT_TAG",
+          "label": "Forza FM Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "FM_TRANSPORT_EXT1MACVLAN",
+          "label": "FM Transport External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "FM_TRANSPORT_TELOSMACVLAN",
+          "label": "FM Transport AOIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "FM_TRANSPORT_AOIP_TASK_RATE",
+          "label": "FM Transport Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "FM_TRANSPORT_EX_RT_CPU",
+          "label": "FM Transport Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which FM Transport will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "FM_TRANSPORT_HTTP_PORT",
+          "label": "FM Transport Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia FM Transport (macvlan)",
+      "description": "Multiplex over IP (MoIP) Encoder",
+      "categories": [
+        "omnia",
+        "forza",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_template",
+        "stackfile": "fm-transport/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "AOIP_IPV4_ADDRESS",
+          "label": "AOIP IP Address",
+          "description": "IP Address for the AoIP Network"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "EX_AOIP_TASK_RATE",
+          "label": "Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "EX_RT_CPU",
+          "label": "Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia FM Transport (dual-macvlan)",
+      "description": "Multiplex over IP (MoIP) Encoder",
+      "categories": [
+        "omnia",
+        "forza",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_template",
+        "stackfile": "fm-transport/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "AOIP_IPV4_ADDRESS",
+          "label": "AOIP IP Address",
+          "description": "IP Address for the AoIP Network"
+        },
+        {
+          "name": "EXT_IPV4_ADDRESS",
+          "label": "External IP Address",
+          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "EX_AOIP_TASK_RATE",
+          "label": "Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "EX_RT_CPU",
+          "label": "Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
         }
       ]
     },
@@ -1247,54 +1677,17 @@
     },
     {
       "type": 3,
-      "title": "Zephyr Connect (host)",
-      "description": "Zephyr Connect Codec with `host` networking",
+      "title": "Beacon (macvlan)",
+      "description": "Beacon with `macvlan` networking",
       "categories": [
         "telos",
-        "zephyr connect",
-        "host"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "zephyr-connect/host/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "TAG",
-          "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
-        },
-        {
-          "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Network interface on the host sytem AoIP traffic is routed to.Example eno1, or eth0. REQUIRED"
-        },
-        {
-          "name": "IFACE_EXT",
-          "label": "IFACE_EXT",
-          "description": "Network interface on host system streaming and web browser traffic are routed to. Example eno1 or eth0. One interface is REQUIRED. It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done with a comma delinated list. Exampl eno1,eno2  "
-        }
-      ]
-    },
-    {
-      "type": 3,
-      "title": "Zephyr Connect (macvlan)",
-      "description": "Zephyr Connect Codec with `single macvlan` networking",
-      "categories": [
-        "telos",
-        "zephyr connect",
+        "beacon",
         "macvlan"
       ],
       "platform": "linux",
       "repository": {
         "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "zephyr-connect/single-macvlan/docker-compose.yml"
+        "stackfile": "beacon/macvlan/docker-compose.yml"
       },
       "env": [
         {
@@ -1310,28 +1703,152 @@
         {
           "name": "IPV4_ADDRESS",
           "label": "IPv4 Address",
-          "description": "Static IPv4 address to assign to the container. REQUIRED"
-        },
-        {
-          "name": "IFACE",
-          "label": "IFACE",
-          "description": "Network interface the docker container connects to on macvlan. If ensure leave blank"
+          "description": "IPv4 Address"
         }
       ]
     },
     {
       "type": 3,
-      "title": "Zephyr Connect (dual-macvlan)",
-      "description": "Zephyr Connect Codec with `dual macvlan` networking",
+      "title": "Container Proxy Service (macvlan)",
+      "description": "Proxy service connected to the telosmacvlan network",
       "categories": [
-        "telos",
-        "zephyr connect",
+        "linux",
+        "open-source",
         "macvlan"
       ],
       "platform": "linux",
       "repository": {
         "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "zephyr-connect/dual-macvlan/docker-compose.yml"
+        "stackfile": "container-proxy-service/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "NGINX_TAG",
+          "label": "Software version tag for NGINX",
+          "description": "Version of NGINX software. Leave blank to use default"
+        },
+        {
+          "name": "NGINX_TELOSMACVLAN",
+          "label": "NGINX AoIP IP address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "TAP_TAG",
+          "label": "Software version tag for Telos Auto Proxy",
+          "description": "Version of Telos Auto Proxy software. Leave blank to use default"
+        },
+        {
+          "name": "ACME_TAG",
+          "label": "Software version tag for ACME",
+          "description": "Version of ACME. Leave blank to use default"
+        },
+        {
+          "name": "ACME_TELOSMACVLAN",
+          "label": "ACME AoIP IP address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "DOMAINNAME",
+          "label": "Domain Name",
+          "description": "Domain a certification will be requested for."
+        },
+        {
+          "name": "CERT_EMAIL",
+          "label": "Email",
+          "description": "Email certificate renewal notices will be sent to."
+        },
+        {
+          "name": "CERT_MODE",
+          "label": "Certificate Mode",
+          "description": "Sets whether ACME will pull a certification or just test. production - will pull a cert. staging - will test a cert. This template defaults to production."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Container Proxy Service (dual macvlan)",
+      "description": "Proxy service  web server connect to the ext1macvlan and telosmacvlan network",
+      "categories": [
+        "linux",
+        "open-source",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "container-proxy-service/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "NGINX_TAG",
+          "label": "Software version tag for NGINX",
+          "description": "Version of NGINX software. Leave blank to use default"
+        },
+        {
+          "name": "NGINX_EXT1MACVLAN",
+          "label": "NGINX External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "NGINX_TELOSMACVLAN",
+          "label": "NGINX AoIP IP address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "TAP_TAG",
+          "label": "Software version tag for Telos Auto Proxy",
+          "description": "Version of Telos Auto Proxy software. Leave blank to use default"
+        },
+        {
+          "name": "ACME_TAG",
+          "label": "Software version tag for ACME",
+          "description": "Version of ACME. Leave blank to use default"
+        },
+        {
+          "name": "ACME_EXT1MACVLAN",
+          "label": "ACME External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "DOMAINNAME",
+          "label": "Domain Name",
+          "description": "Domain a certification will be requested for."
+        },
+        {
+          "name": "CERT_EMAIL",
+          "label": "Email",
+          "description": "Email certificate renewal notices will be sent to."
+        },
+        {
+          "name": "CERT_MODE",
+          "label": "Certificate Mode",
+          "description": "Sets whether ACME will pull a certification or just test. production - will pull a cert. staging - will test a cert. This template defaults to production."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Coturn (host)",
+      "description": "Local STUN and TURN server to support WebRTC enabled products",
+      "categories": [
+        "linux",
+        "open-source",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "coturn/host/docker-compose.yml"
       },
       "env": [
         {
@@ -1345,24 +1862,108 @@
           "description": "Set the container name, hostname, and studio name for an Altus"
         },
         {
-          "name": "AOIP_IPV4_ADDRESS",
+          "name": "DOMAINNAME",
+          "label": "Domain Name for host system",
+          "description": "This is the Domain Name you have assigned for the Proxy Server"
+        },
+        {
+          "name": "HOSTIP",
+          "label": "Host IP",
+          "description": "The IP Address of the NIC on your host system that is routed to the internet."
+        },
+        {
+          "name": "PUBLICIP",
+          "label": "Public IP",
+          "description": "The Public IP Address the network this host is connected to."
+        },
+        {
+          "name": "TURNUSERNAME",
+          "label": "Turn Username",
+          "description": "Username that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "TURNPASSWORD",
+          "label": "Turn Password",
+          "description": "Password that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "MINIMUMPORT",
+          "label": "Minimum Turn Port",
+          "description": "Lowest number port used for turn connection. Leave this blank to use the default port number (49152) which works with most firewalls."
+        },
+        {
+          "name": "MAXIMUMPORT",
+          "label": "Maximum Turn Port",
+          "description": "Highest number port used for turn connection. Leave this blank to use the default port number (65535) which works with most firewalls."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "PTP4L (host)",
+      "description": "Precision Time Protocol Daemon for Linux with `host` networking",
+      "categories": [
+        "linux",
+        "open-source",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+        "stackfile": "ptp4l/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "PTP4L_ARGS",
+          "label": "ptp4l command line args",
+          "description": "Command line arguments for ptp4l. Details here: linux.die.net/man/8/ptp4l. Leave blank if unsure"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "PTP4L (macvlan)",
+      "description": "Precision Time Protocol Daemon for Linux with `macvlan` networking",
+      "categories": [
+        "linux",
+        "open-source",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "ptp4l/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "PTP4L_ARGS",
+          "label": "ptp4l command line args",
+          "description": "Command line arguments for ptp4l. Details here: linux.die.net/man/8/ptp4l. Leave blank if unsure"
+        },
+        {
+          "name": "IPV4_ADDRESS",
           "label": "IPv4 Address",
-          "description": "Static IPv4 address to assign to the AoIP interface of the container. REQUIRED"
-        },
-        {
-          "name": "EXT_IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "Static IPv4 address to assign to the external interface of the container. REQUIRED"
-        },
-        {
-          "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Network interface AoIP traffic is routed to. Example eno1, or eth0. REQUIRED"
-        },
-        {
-          "name": "IFACE_EXT",
-          "label": "IFACE_EXT",
-          "description": "Network interface on host system streaming and web browser traffic are routed to. Example eno1 or eth0. One interface is REQUIRED. It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done with a comma delinated list. Example eno1,eno2"
+          "description": "IPv4 Address"
         }
       ]
     },
