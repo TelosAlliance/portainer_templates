@@ -523,6 +523,127 @@
     },
     {
       "type": 3,
+      "title": "Telos Zephyr Connect (host)",
+      "description": "Zephyr Connect Codec with `host` networking",
+      "categories": [
+        "telos",
+        "zephyr connect",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "zephyr-connect/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Network interface on the host sytem AoIP traffic is routed to.Example eno1, or eth0. REQUIRED"
+        },
+        {
+          "name": "IFACE_EXT",
+          "label": "IFACE_EXT",
+          "description": "Network interface on host system streaming and web browser traffic are routed to. Example eno1 or eth0. One interface is REQUIRED. It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done with a comma delinated list. Exampl eno1,eno2  "
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Telos Zephyr Connect (macvlan)",
+      "description": "Zephyr Connect Codec with `single macvlan` networking",
+      "categories": [
+        "telos",
+        "zephyr connect",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "zephyr-connect/single-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "Static IPv4 address to assign to the container. REQUIRED"
+        },
+        {
+          "name": "IFACE",
+          "label": "IFACE",
+          "description": "Network interface the docker container connects to on macvlan. If ensure leave blank"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Telos Zephyr Connect (dual-macvlan)",
+      "description": "Zephyr Connect Codec with `dual macvlan` networking",
+      "categories": [
+        "telos",
+        "zephyr connect",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "zephyr-connect/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name for an Altus"
+        },
+        {
+          "name": "AOIP_IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "Static IPv4 address to assign to the AoIP interface of the container. REQUIRED"
+        },
+        {
+          "name": "EXT_IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "Static IPv4 address to assign to the external interface of the container. REQUIRED"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Network interface AoIP traffic is routed to. Example eno1, or eth0. REQUIRED"
+        },
+        {
+          "name": "IFACE_EXT",
+          "label": "IFACE_EXT",
+          "description": "Network interface on host system streaming and web browser traffic are routed to. Example eno1 or eth0. One interface is REQUIRED. It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done with a comma delinated list. Example eno1,eno2"
+        }
+      ]
+    },
+    {
+      "type": 3,
       "title": "Omnia Forza (host)",
       "description": "Forza audio processor with `host` networking",
       "categories": [
@@ -1551,127 +1672,6 @@
           "label": "Web Interface TCP Port",
           "default": "80",
           "description": "TCP Port used to run the web server that serves the GUI and API"
-        }
-      ]
-    },
-    {
-      "type": 3,
-      "title": "Zephyr Connect (host)",
-      "description": "Zephyr Connect Codec with `host` networking",
-      "categories": [
-        "telos",
-        "zephyr connect",
-        "host"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "zephyr-connect/host/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "TAG",
-          "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
-        },
-        {
-          "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Network interface on the host sytem AoIP traffic is routed to.Example eno1, or eth0. REQUIRED"
-        },
-        {
-          "name": "IFACE_EXT",
-          "label": "IFACE_EXT",
-          "description": "Network interface on host system streaming and web browser traffic are routed to. Example eno1 or eth0. One interface is REQUIRED. It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done with a comma delinated list. Exampl eno1,eno2  "
-        }
-      ]
-    },
-    {
-      "type": 3,
-      "title": "Zephyr Connect (macvlan)",
-      "description": "Zephyr Connect Codec with `single macvlan` networking",
-      "categories": [
-        "telos",
-        "zephyr connect",
-        "macvlan"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "zephyr-connect/single-macvlan/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "TAG",
-          "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
-        },
-        {
-          "name": "IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "Static IPv4 address to assign to the container. REQUIRED"
-        },
-        {
-          "name": "IFACE",
-          "label": "IFACE",
-          "description": "Network interface the docker container connects to on macvlan. If ensure leave blank"
-        }
-      ]
-    },
-    {
-      "type": 3,
-      "title": "Zephyr Connect (dual-macvlan)",
-      "description": "Zephyr Connect Codec with `dual macvlan` networking",
-      "categories": [
-        "telos",
-        "zephyr connect",
-        "macvlan"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "zephyr-connect/dual-macvlan/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "TAG",
-          "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
-        },
-        {
-          "name": "AOIP_IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "Static IPv4 address to assign to the AoIP interface of the container. REQUIRED"
-        },
-        {
-          "name": "EXT_IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "Static IPv4 address to assign to the external interface of the container. REQUIRED"
-        },
-        {
-          "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Network interface AoIP traffic is routed to. Example eno1, or eth0. REQUIRED"
-        },
-        {
-          "name": "IFACE_EXT",
-          "label": "IFACE_EXT",
-          "description": "Network interface on host system streaming and web browser traffic are routed to. Example eno1 or eth0. One interface is REQUIRED. It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done with a comma delinated list. Example eno1,eno2"
         }
       ]
     },
