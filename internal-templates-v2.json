@@ -644,7 +644,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza (host)",
+      "title": "Omnia Forza HDS (host)",
       "description": "Forza audio processor with `host` networking",
       "categories": [
         "omnia",
@@ -706,7 +706,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza (macvlan)",
+      "title": "Omnia Forza HDS (macvlan)",
       "description": "Forza audio processor with `macvlan` networking",
       "categories": [
         "omnia",
@@ -774,7 +774,7 @@
     {
       "type": 3,
       "title": "Omnia Forza (dual-macvlan)",
-      "description": "Forza audio processor with `macvlan` networking",
+      "description": "Forza audio processor with `dual-macvlan` networking",
       "categories": [
         "omnia",
         "forza",
@@ -845,7 +845,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza Non-Root (host)",
+      "title": "Omnia Forza HDS Non-Root (host)",
       "description": "Forza audio processor with `host` networking",
       "categories": [
         "omnia",
@@ -917,7 +917,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza Non-Root (macvlan)",
+      "title": "Omnia Forza HDS Non-Root (macvlan)",
       "description": "Forza audio processor with `macvlan` networking",
       "categories": [
         "omnia",
@@ -995,7 +995,7 @@
     {
       "type": 3,
       "title": "Omnia Forza Non-Root (dual-macvlan)",
-      "description": "Forza audio processor with `macvlan` networking",
+      "description": "Forza audio processor with `dual-macvlan` networking",
       "categories": [
         "omnia",
         "forza",
