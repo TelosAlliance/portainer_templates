@@ -18,6 +18,7 @@ services:
       - NET_ADMIN
     environment:
       - NDI_CONFIG_DIR=/root/.newtek
+      - TA_AUTO_PROXY=true
 
 volumes:
   config:
