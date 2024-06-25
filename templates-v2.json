@@ -200,7 +200,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza (host)",
+      "title": "Omnia Forza HDS (host)",
       "description": "Forza audio processor with `host` networking",
       "categories": [
         "omnia",
@@ -262,7 +262,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza (macvlan)",
+      "title": "Omnia Forza HDS (macvlan)",
       "description": "Forza audio processor with `macvlan` networking",
       "categories": [
         "omnia",
@@ -329,7 +329,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza (dual-macvlan)",
+      "title": "Omnia Forza HDS (dual-macvlan)",
       "description": "Forza audio processor with `macvlan` networking",
       "categories": [
         "omnia",
@@ -395,6 +395,200 @@
         {
           "name": "HTTP_PORT",
           "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza FM Service (macvlan)",
+      "description": "Forza FM audio processor with `macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza-fm",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "forza-fm-service/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "FORZA_TAG",
+          "label": "Forza FM Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "FORZA_TELOSMACVLAN",
+          "label": "Forza FM AOIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "FORZA_EX_RT_CPU",
+          "label": "Forza Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "FORZA_AOIP_TASK_RATE",
+          "label": "Forza Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "FORZA_HTTP_PORT",
+          "label": "Forza Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        },
+        {
+          "name": "FM_TRANSPORT_TAG",
+          "label": "Forza FM Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "FM_TRANSPORT_TELOSMACVLAN",
+          "label": "FM Transport AOIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "FM_TRANSPORT_AOIP_TASK_RATE",
+          "label": "FM Transport Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "FM_TRANSPORT_EX_RT_CPU",
+          "label": "FM Transport Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which FM Transport will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "FM_TRANSPORT_HTTP_PORT",
+          "label": "FM Transport Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Omnia Forza FM Service (dual-macvlan)",
+      "description": "Forza FM audio processor with `dual-macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza-fm",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "forza-fm-service/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "STACK_NAME",
+          "label": "Stack Name",
+          "description": "Set the container names, and hostnames of each container in the stack."
+        },
+        {
+          "name": "FORZA_TAG",
+          "label": "Forza FM Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "FORZA_EXT1MACVLAN",
+          "label": "Forza FM External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "FORZA_TELOSMACVLAN",
+          "label": "Forza FM AOIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP Domain Number",
+          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+        },
+        {
+          "name": "FORZA_EX_RT_CPU",
+          "label": "Forza Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "FORZA_AOIP_TASK_RATE",
+          "label": "Forza Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "FORZA_HTTP_PORT",
+          "label": "Forza Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API"
+        },
+        {
+          "name": "FM_TRANSPORT_TAG",
+          "label": "Forza FM Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "FM_TRANSPORT_EXT1MACVLAN",
+          "label": "FM Transport External IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+        },
+        {
+          "name": "FM_TRANSPORT_TELOSMACVLAN",
+          "label": "FM Transport AOIP IP Address",
+          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+        },
+        {
+          "name": "FM_TRANSPORT_AOIP_TASK_RATE",
+          "label": "FM Transport Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "FM_TRANSPORT_EX_RT_CPU",
+          "label": "FM Transport Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which FM Transport will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+        },
+        {
+          "name": "FM_TRANSPORT_HTTP_PORT",
+          "label": "FM Transport Web Interface TCP Port",
           "description": "TCP Port used to run the web server that serves the GUI and API"
         }
       ]
