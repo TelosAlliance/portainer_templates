@@ -3,6 +3,65 @@
   "templates": [
     {
       "type": 3,
+      "title": "25-Seven PDMX (host)",
+      "description": "PDMX Program Delay Manager with `host` networking",
+      "categories": [
+        "telos",
+        "pdmx",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "pdmx/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "25-Seven PDMX (macvlan)",
+      "description": "PDMX Program Delay Manager with `macvlan` networking",
+      "categories": [
+        "telos",
+        "pdmx",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "pdmx/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name"
+        },
+        {
+          "name": "IPV4_ADDRESS",
+          "label": "IPv4 Address",
+          "description": "IPv4 Address"
+        }
+      ]
+    },
+    {
+      "type": 3,
       "title": "Axia Altus (host)",
       "description": "Altus console with `host` networking",
       "categories": [
