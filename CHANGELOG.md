@@ -6,6 +6,10 @@ This change log contains the history of changes to the Portainer Templates.
 
 This is a lists changes in the history of Portainer Templates. This document should be considered as developer notes and not delivered to customers. Formal release notes that pertain to changes in templates are listed in the products that consume Portainer templates. Please use the VIP, or TACST release notes to share updates with customers.
 
+### 1.3.2
+
+* Release PDMX
+
 ### 1.3.1
 
 * Release Forza FM
