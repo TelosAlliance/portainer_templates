@@ -773,7 +773,7 @@
     },
     {
       "type": 3,
-      "title": "Omnia Forza (dual-macvlan)",
+      "title": "Omnia Forza HDS (dual-macvlan)",
       "description": "Forza audio processor with `dual-macvlan` networking",
       "categories": [
         "omnia",
@@ -783,7 +783,7 @@
       "platform": "linux",
       "repository": {
         "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "forza/macvlan/docker-compose.yml"
+        "stackfile": "forza/dual-macvlan/docker-compose.yml"
       },
       "env": [
         {

@@ -398,7 +398,7 @@
       "platform": "linux",
       "repository": {
         "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "forza/macvlan/docker-compose.yml"
+        "stackfile": "forza/dual-macvlan/docker-compose.yml"
       },
       "env": [
         {
