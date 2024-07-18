@@ -1085,7 +1085,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_template",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza-fm/macvlan/docker-compose.yml"
       },
       "env": [
@@ -1152,7 +1152,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_template",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza-fm/dual-macvlan/docker-compose.yml"
       },
       "env": [
@@ -1224,7 +1224,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_template",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza-fm-service/macvlan/docker-compose.yml"
       },
       "env": [
@@ -1316,7 +1316,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_template",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "forza-fm-service/dual-macvlan/docker-compose.yml"
       },
       "env": [
@@ -1418,7 +1418,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_template",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "fm-transport/macvlan/docker-compose.yml"
       },
       "env": [
@@ -1485,7 +1485,7 @@
       ],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_template",
+        "url": "https://github.com/TelosAlliance/portainer_templates",
         "stackfile": "fm-transport/dual-macvlan/docker-compose.yml"
       },
       "env": [
