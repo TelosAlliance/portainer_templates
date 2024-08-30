@@ -13,7 +13,7 @@
         ],
         "platform": "linux",
         "repository": {
-          "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+          "url": "https://github.com/TelosAlliance/portainer_templates",
           "stackfile": "altus/macvlan/docker-compose.yml"
         },
         "env": [
@@ -46,7 +46,7 @@
         ],
         "platform": "linux",
         "repository": {
-          "url": "https://gitlab.zephyr.com/devops/portainer-templates",
+          "url": "https://github.com/TelosAlliance/portainer_templates",
           "stackfile": "vxs/macvlan/docker-compose.yml"
         },
         "env": [
