@@ -43,8 +43,8 @@ flowchart TD
 
     subgraph Git Server
     TempRepo[Templates repository]
-    Json1[templates-v2.json]
-    Json2[vip-templates.json] 
+    Json1[templates-v3.json]
+    Json2[vip-templates-v3.json] 
     HUrl[Hosting URL]
     end
     HUrl --> Json1 & Json2 
@@ -61,13 +61,13 @@ flowchart TD
     CompFile --> |starts| RC
 ```
 
-### templates-v2.json
+### templates-v3.json
 
-Templates-v2.json is the standard production template for Telos Alliance Container Setup Tool. Products listed in Templates-v2.json are fully released by Telos Alliance. All customer with TACST or VIP will get this update as soon as it is on master.
+templates-v3.json is the standard production template for Telos Alliance Container Setup Tool. Products listed in templates-v3.json are fully released by Telos Alliance. All customer with TACST or VIP will get this update as soon as it is on master.
 
-### vip-templates.json
+### vip-templates-v3.json
 
-Vip-templates.json is the standard production template for VIP Systems. Products listed in vip-templates.json are fully released by Telos Alliance. All customers with VIP Systems will get this update as soon as it is on master.
+vip-templates-v3.json is the standard production template for VIP Systems. Products listed in vip-templates-v3.json are fully released by Telos Alliance. All customers with VIP Systems will get this update as soon as it is on master.
 
 VIP has special templates to support additional VIP Products (Panels, VIP Server, and Dashboard) only available to VIP customers. There are also some special considerations for general products, like VXS, that must be accounted for in VIP system.
 
@@ -84,12 +84,18 @@ By default products that can use templates have the appropriate template in plac
 
     | Template Name | URL |
     |---------------|-----|
-    |templates-v2|<https://github.com/TelosAlliance/portainer_templates/raw/main/templates-v2.json>|
-    |vip-templates|<https://github.com/TelosAlliance/portainer_templates/raw/main/vip-templates.json> |
+    |templates-v2|<https://github.com/TelosAlliance/portainer_templates/raw/main/templates-v3.json>|
+    |vip-templates|<https://github.com/TelosAlliance/portainer_templates/raw/main/vip-templates-v3.json> |
 
 1. Press save
 1. Navigate to the App Template menu
 1. The product list you switched to is now present.
+
+> **WARNING:** Portainer versions 2.18 and earlier require version 2 portainer templates.
+>| Template Name | URL |
+>|---------------|-----|
+>|templates-v2|<https://gitlab.zephyr.com/devops/portainer-templates-development/-/raw/master/templates-v2.json>|
+>|vip-templates-v2|<https://gitlab.zephyr.com/devops/portainer-templates-development/-/raw/master/vip-templates-v2.json> |
 
 ## More information
 
