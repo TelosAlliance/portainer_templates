@@ -81,7 +81,9 @@ services:
       - TA_AUTO_PROXY=true
 
 networks:
-  ext1macvlan:
-    name: ext1macvlan
   telosmacvlan:
-    name: telosmacvlan
+    external:
+      name: telosmacvlan
+  ext1macvlan:
+    external:
+      name: ext1macvlan

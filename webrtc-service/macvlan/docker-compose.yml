@@ -78,4 +78,5 @@ services:
       - TA_AUTO_PROXY=true
 networks:
   telosmacvlan:
-    name: telosmacvlan
+    external:
+      name: telosmacvlan
