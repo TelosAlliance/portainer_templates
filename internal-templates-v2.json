@@ -25,6 +25,11 @@
           "name": "INSTANCE_NAME",
           "label": "Container Name",
           "description": "Set the container name, hostname, and studio name"
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "REQUIRED. Network interface on the host system that AoIP traffic is routed to. Examples include eno1, eno0, etc."
         }
       ]
     },
@@ -57,6 +62,48 @@
           "name": "IPV4_ADDRESS",
           "label": "IPv4 Address",
           "description": "IPv4 Address"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "25-Seven PDMX (dual-macvlan)",
+      "description": "PDMX Program Delay Manager with `dual-macvlan` networking",
+      "categories": [
+        "telos",
+        "pdmx",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "pdmx/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default"
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container Name",
+          "description": "Set the container name, hostname, and studio name"
+        },
+        {
+          "name": "AOIP_IPV4_ADDRESS",
+          "label": "AOIP IP Address",
+          "description": "IP Address for the AoIP Network"
+        },
+        {
+          "name": "EXT_IPV4_ADDRESS",
+          "label": "External IP Address",
+          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
+        },
+        {
+          "name": "IFACE_AOIP",
+          "label": "AoIP Network Interface",
+          "description": "Network interface in the PDMX container that AoIP traffic is routed to. Defaults to eth1 (the default for Telosmacvlan in PDMX)"
         }
       ]
     },

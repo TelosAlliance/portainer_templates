@@ -6,6 +6,7 @@ services:
     container_name: pdmx-${INSTANCE_NAME}
     environment:
       STUDIO: ${INSTANCE_NAME}
+      IFACE_AOIP: ${IFACE_AOIP}
     network_mode: host
     cap_add:
       - SYS_NICE
