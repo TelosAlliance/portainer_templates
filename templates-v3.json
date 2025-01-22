@@ -585,7 +585,7 @@
         },
         {
           "name": "FM_TRANSPORT_TAG",
-          "label": "Forza FM Software version tag",
+          "label": "Forza FM Transport Software version tag",
           "description": "Version of software. Leave blank to use default"
         },
         {
@@ -683,7 +683,7 @@
         },
         {
           "name": "FM_TRANSPORT_TAG",
-          "label": "Forza FM Software version tag",
+          "label": "Forza FM Transport Software version tag",
           "description": "Version of software. Leave blank to use default"
         },
         {
