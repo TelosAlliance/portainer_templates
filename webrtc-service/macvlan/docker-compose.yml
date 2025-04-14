@@ -1,82 +1,86 @@
-version: '3'
 services:
   nginx:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/nginx}:${NGINX_TAG:-latest}
     container_name: nginx-${STACK_NAME}
     hostname: nginx-${STACK_NAME}
+    restart: unless-stopped
     networks:
       telosmacvlan:
-        ipv4_address: ${NGINX_TELOSMACVLAN}
+        ipv4_address: ${NGINX_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/nginx-${STACK_NAME}/conf.d:/etc/nginx/conf.d 
       - /opt/telos/nginx-${STACK_NAME}/ssl:/etc/nginx/ssl 
       - /opt/telos/nginx-${STACK_NAME}/www:/var/www
+
   ta_auto_proxy:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/ta-auto-proxy}:${TAP_TAG:-latest}
     container_name: ta-auto-proxy-${STACK_NAME}
     hostname: ta-auto-proxy-${STACK_NAME}
+    restart: unless-stopped
     stop_grace_period: 4s
     environment:
       - NGINX_CONTAINER_NAME=nginx-${STACK_NAME}
     volumes:
       - /opt/telos/nginx-${STACK_NAME}:/etc/nginx
       - /var/run/docker.sock:/var/run/docker.sock
+
   acme:
     image:  ${REPOSITORY:-quay.io/telosalliance/acme}:${ACME_TAG:-latest}
     container_name: acme-${STACK_NAME}
     hostname: acme-${STACK_NAME}
-    networks:
-      telosmacvlan:
-        ipv4_address: ${ACME_TELOSMACVLAN}
     environment:
-      - CERT_DOMAIN=${DOMAINNAME}
+      - CERT_DOMAIN=${CERT_DOMAIN}
       - CERT_EMAIL=${CERT_EMAIL}
       - CERT_MODE=${CERT_MODE:-production}
       - NGINX_CONTAINER_NAME=nginx-${STACK_NAME}
+    networks:
+      telosmacvlan:
+        ipv4_address: ${ACME_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/acme-${STACK_NAME}:/acme.sh
       - /opt/telos/nginx-${STACK_NAME}/www:/var/www
       - /opt/telos/nginx-${STACK_NAME}/ssl:/etc/nginx/ssl
       - /opt/telos/nginx-${STACK_NAME}/conf.d/option.d:/etc/nginx/conf.d/option.d
       - /var/run/docker.sock:/var/run/docker.sock
+
   coturn:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/coturn}:${COTURN_TAG:-latest}
-    command: --log-file=stdout --realm=$$DomainName --server-name=$$DomainName --fingerprint --external-ip=$${ExternalIP:-$$(detect-external-ip)}/$$InternalIP --relay-ip=$${ExternalIP:-$$(detect-external-ip)}/$$InternalIP --min-port=$$MinimumPort --max-port=$$MaximumPort --user=$$TurnUsername:$$TurnPassword --lt-cred-mech --stale-nonce=0 --channel-lifetime=0
     container_name: coturn-${STACK_NAME}
     hostname: coturn-${STACK_NAME}
-    networks:
-      telosmacvlan:
-        ipv4_address: ${COTURN_TELOSMACVLAN}
+    restart: unless-stopped
+    command: --log-file=stdout --realm=$$DomainName --server-name=$$DomainName --fingerprint --external-ip=$${ExternalIP:-$$(detect-external-ip)}/$$InternalIP --relay-ip=$${ExternalIP:-$$(detect-external-ip)}/$$InternalIP --min-port=$$MinimumPort --max-port=$$MaximumPort --user=$$TurnUsername:$$TurnPassword --lt-cred-mech --stale-nonce=0 --channel-lifetime=0
     environment:
-      - DomainName=${DOMAINNAME}
-      - InternalIP=${COTURN_TELOSMACVLAN}
+      - DomainName=${CERT_DOMAIN}
+      - InternalIP=${COTURN_IFACE_AOIP_IPV4_ADDRESS}
       - ExternalIP=${PUBLICIP}
       - TurnUsername=${TURNUSERNAME}
       - TurnPassword=${TURNPASSWORD}
       - MinimumPort=${MINIMUMPORT:-49152} 
       - MaximumPort=${MAXIMUMPORT:-65535}
+    networks:
+      telosmacvlan:
+        ipv4_address: ${COTURN_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/coturn-${STACK_NAME}/coturn_data:/var/lib/coturn:z
       - /opt/telos/nginx-${STACK_NAME}/ssl:/certs:ro
+
   beacon:
     depends_on: 
      - ta_auto_proxy
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/beacon}:${BEACON_TAG:-latest}
     container_name: beacon-${STACK_NAME}
     hostname: beacon-${STACK_NAME}
+    restart: unless-stopped
+    environment:
+      - TA_AUTO_PROXY=true
     networks:
       telosmacvlan:
-           ipv4_address: ${BEACON_TELOSMACVLAN}
+           ipv4_address: ${BEACON_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/beacon-${STACK_NAME}:/config:z
       - /etc/telos:/etc/telos:ro
-    environment:
-      - TA_AUTO_PROXY=true
+      
 networks:
   telosmacvlan:
-    external:
-      name: telosmacvlan
+    name: telosmacvlan
+    external: true

@@ -1,8 +1,8 @@
 services:
   forza:
-    image: ${REPOSITORY:-quay.io/telosalliance/forza-fm}:${TAG:-latest}
-    container_name: forza-fm-${INSTANCE_NAME}
-    hostname: forza-fm-${INSTANCE_NAME}
+    image: ${REPOSITORY:-quay.io/telosalliance/forza}:${TAG:-latest}
+    container_name: forza-hds-${INSTANCE_NAME}
+    hostname: forza-hds-${INSTANCE_NAME}
     restart: unless-stopped
     user: ${TAC_UID:-0}:${TAC_GID:-0}
     cap_add:
@@ -18,13 +18,13 @@ services:
       - EX_CLOCK_SOURCE=${EX_CLOCK_SOURCE:-ptp-snooping}
       - EX_AOIP_CLOCK=${EX_AOIP_CLOCK:-0}
       - EX_PTP_DOMAIN=${EX_PTP_DOMAIN:-0}
-      - EX_AOIP_TASK_RATE=${EX_AOIP_TASK_RATE:-200}
+      - EX_AOIP_TASK_RATE=${EX_AOIP_TASK_RATE:-1000}
       - EX_RT_CPU=${EX_RT_CPU}
     networks:
       telosmacvlan:
         ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
-      - /opt/telos/forza-fm-${INSTANCE_NAME}/forza_data:/data
+      - /opt/telos/forza-hds-${INSTANCE_NAME}/forza_data:/data
 
 networks:
   telosmacvlan:

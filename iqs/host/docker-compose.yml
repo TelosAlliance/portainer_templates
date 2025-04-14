@@ -1,16 +1,15 @@
-version: '2.4'
 services:
   iqs:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/iqs}:${TAG:-latest}
     container_name: iqs-${INSTANCE_NAME}
     hostname: iQs-${INSTANCE_NAME}
-    network_mode: host
-    volumes:
-      - /opt/telos/iqs-${INSTANCE_NAME}/config:/config
+    restart: unless-stopped
     cap_add:
       - SYS_NICE
       - NET_ADMIN
+    network_mode: host
+    volumes:
+      - /opt/telos/iqs-${INSTANCE_NAME}/config:/config
 
 volumes:
   config:

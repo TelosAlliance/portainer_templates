@@ -2,9 +2,9 @@
 
 ## Scope
 
-Telos Alliance's portainer templates are used to deploy Telos Alliance container products. These templates **SHOULD** only be used as part of the Telos Alliance Container Setup Tool (TACST) or VIP System.
+Telos Alliance's portainer templates are used to deploy Telos Alliance container products. These templates **SHOULD** only be used as part of the [Telos Alliance Container Setup Tool (TACST)](https://gitlab.zephyr.com/devops/conman) or [VIP System](https://gitlab.zephyr.com/intercom/intercom-docker).
 
-These templates will not work on other systems. If a container product is being deployed with out TACST or VIP please [contact customer support](https://www.telosalliance.com/support-request).
+These templates will not work on other systems. If a container product is being deployed with out TACST or VIP please reference the [Docker Compose files](https://gitlab.zephyr.com/devops/docker-compose) and product specific information.
 
 ## What are Portainer templates?
 
@@ -12,9 +12,9 @@ Portainer has an option where you can create predetermined templates to easily d
 
 ## How do Portainer templates work
 
-Portainer pulls the templates in over the internet from the Telos Alliance GitHub server. Each template file in this project has a unique purpose. The templates a system use can be changed by adjusting the URL in the Portianer UI. The next sections explain the purpose of each template, and the how to change between templates.
+Portainer pulls the templates in over the internet from the Telos Alliance GitHub server for production and the GitLab server for development. Each template file in this project has a unique purpose. The templates a system use can be changed by adjusting the URL in the Portianer UI. The next sections explain the purpose of each template, and the how to change between templates.
 
-Since templates are delivered by pulling on a URL from GitHub Portainer templates are updated in customer system as soon as changes are pushed to main. As such the any change pushed to main will automatically update systems in production.
+Since templates are delivered by pulling on a URL from GitLab Portainer templates are updated in customer system as soon as changes are pushed to master. As such the any change pushed to master will be live for testing.
 
 ```mermaid
 flowchart TD
@@ -35,7 +35,7 @@ flowchart TD
     subgraph Portainer Templates on Portainer start
     StPort[Start Portainer]
     PortAPI[Call Portainer API endpoint]
-    PortApiSet[Set TEAMPLATES value to URL]
+    PortApiSet[Set TEMPLATES value to URL]
     end
     StPort --> PortAPI
     PortAPI --> PortApiSet
@@ -47,7 +47,7 @@ flowchart TD
     Json2[vip-templates-v3.json] 
     HUrl[Hosting URL]
     end
-    HUrl --> Json1 & Json2 
+    HUrl --> Json1 & Json2
     Json1 & Json2 --> |templates pull from| TempRepo
 
     subgraph Portainer&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -63,11 +63,11 @@ flowchart TD
 
 ### templates-v3.json
 
-templates-v3.json is the standard production template for Telos Alliance Container Setup Tool. Products listed in templates-v3.json are fully released by Telos Alliance. All customer with TACST or VIP will get this update as soon as it is on master.
+templates-v3.json is the standard production template for Telos Alliance Container Setup Tool. Products listed in templates-v3.json **MUST** be fully released by Telos Alliance. All customers with TACST will get this update as soon as it is on main.
 
 ### vip-templates-v3.json
 
-vip-templates-v3.json is the standard production template for VIP Systems. Products listed in vip-templates-v3.json are fully released by Telos Alliance. All customers with VIP Systems will get this update as soon as it is on master.
+vip-templates-v3.json is the standard production template for VIP Systems. Products listed in vip-templates-v3.json **MUST** be fully released by Telos Alliance. All customers with VIP systems will get this update as soon as it is on master.
 
 VIP has special templates to support additional VIP Products (Panels, VIP Server, and Dashboard) only available to VIP customers. There are also some special considerations for general products, like VXS, that must be accounted for in VIP system.
 
@@ -92,10 +92,11 @@ By default products that can use templates have the appropriate template in plac
 1. The product list you switched to is now present.
 
 > **WARNING:** Portainer versions 2.18 and earlier require version 2 portainer templates.
+
 >| Template Name | URL |
 >|---------------|-----|
->|templates-v2|<https://gitlab.zephyr.com/devops/portainer-templates-development/-/raw/master/templates-v2.json>|
->|vip-templates-v2|<https://gitlab.zephyr.com/devops/portainer-templates-development/-/raw/master/vip-templates-v2.json> |
+>|templates-v2|<https://github.com/TelosAlliance/portainer_templates/raw/main/templates-v2.json>|
+>|vip-templates-v2|<https://github.com/TelosAlliance/portainer_templates/raw/main/vip-templates-v2.json> |
 
 ## More information
 

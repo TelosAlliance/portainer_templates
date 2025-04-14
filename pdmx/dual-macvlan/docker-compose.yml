@@ -1,18 +1,9 @@
-version: '2.4'
 services:
   pdmx:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/pdmx}:${TAG:-latest}
     container_name: pdmx-${INSTANCE_NAME}
-    hostname: pdmx:${INSTANCE_NAME}
-    environment:
-      STUDIO: ${INSTANCE_NAME}
-      IFACE_AOIP: ${IFACE_AOIP:-eth1}
-    networks:
-      telosmacvlan:
-        ipv4_address: ${AOIP_IPV4_ADDRESS}
-      ext1macvlan:
-        ipv4_address: ${EXT_IPV4_ADDRESS}
+    hostname: pdmx-${INSTANCE_NAME}
+    restart: unless-stopped
     sysctls:
       #### Make sure tcp sockets fail quickly if network dies ####
       # Idle time until first keepalive packet sent
@@ -26,6 +17,14 @@ services:
     cap_add:
       - NET_ADMIN
       - SYS_NICE
+    environment:
+      - STUDIO=${INSTANCE_NAME}
+      - IFACE_AOIP=${IFACE_AOIP:-eth1}
+    networks:
+      telosmacvlan:
+        ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
+      ext1macvlan:
+        ipv4_address: ${IFACE_EXT_IPV4_ADDRESS}
     volumes:
       - /dev/log:/dev/log
       - /opt/telos/pdmx-${INSTANCE_NAME}/config:/etc/pdmii
@@ -33,14 +32,14 @@ services:
     tmpfs:
       - /run/pdmx
 
+networks:
+  telosmacvlan:
+    name: telosmacvlan
+    external: true
+  ext1macvlan:
+    name: ext1macvlan
+    external: true
+
 volumes:
   data:
   config:
-
-networks:
-  telosmacvlan:
-    external:
-      name: telosmacvlan
-  ext1macvlan:
-    external:
-      name: ext1macvlan

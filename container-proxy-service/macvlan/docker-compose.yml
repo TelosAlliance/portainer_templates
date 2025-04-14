@@ -1,40 +1,41 @@
-version: '3'
 services:
   nginx:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/nginx}:${NGINX_TAG:-latest}
     container_name: nginx-${STACK_NAME}
     hostname: nginx-${STACK_NAME}
+    restart: unless-stopped
     networks:
       telosmacvlan:
-        ipv4_address: ${NGINX_TELOSMACVLAN}
+        ipv4_address: ${NGINX_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/nginx-${STACK_NAME}/conf.d:/etc/nginx/conf.d 
       - /opt/telos/nginx-${STACK_NAME}/ssl:/etc/nginx/ssl 
       - /opt/telos/nginx-${STACK_NAME}/www:/var/www
+
   ta_auto_proxy:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/ta-auto-proxy}:${TAP_TAG:-latest}
     container_name: ta-auto-proxy-${STACK_NAME}
     hostname: ta-auto-proxy-${STACK_NAME}
+    restart: unless-stopped
     stop_grace_period: 4s
     environment:
       - NGINX_CONTAINER_NAME=nginx-${STACK_NAME}
     volumes:
       - /opt/telos/nginx-${STACK_NAME}:/etc/nginx
       - /var/run/docker.sock:/var/run/docker.sock
+
   acme:
     image:  ${REPOSITORY:-quay.io/telosalliance/acme}:${ACME_TAG:-latest}
     container_name: acme-${STACK_NAME}
     hostname: acme-${STACK_NAME}
-    networks:
-      telosmacvlan:
-        ipv4_address: ${ACME_TELOSMACVLAN}
     environment:
-      - CERT_DOMAIN=${DOMAINNAME}
+      - CERT_DOMAIN=${CERT_DOMAIN}
       - CERT_EMAIL=${CERT_EMAIL}
       - CERT_MODE=${CERT_MODE:-production}
       - NGINX_CONTAINER_NAME=nginx-${STACK_NAME}
+    networks:
+      telosmacvlan:
+        ipv4_address: ${ACME_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/acme-${STACK_NAME}:/acme.sh
       - /opt/telos/nginx-${STACK_NAME}/www:/var/www
@@ -45,3 +46,4 @@ services:
 networks:
   telosmacvlan:
     name: telosmacvlan
+    external: true

@@ -8,16 +8,6 @@ services:
     environment:
       - HTTP_PORT=${HTTP_PORT:-80}
       - IFACE_AOIP=${IFACE_AOIP:-eth0}
-    networks:
-      telosmacvlan:
-        ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
-      ext1macvlan:
-        ipv4_address: ${IFACE_EXT_IPV4_ADDRESS}
+    network_mode: "host"
     volumes:
       - /opt/telos/fm-transport-${INSTANCE_NAME}/data:/data
-     
-networks:
-  telosmacvlan:
-    external: true
-  ext1macvlan:
-    external: true

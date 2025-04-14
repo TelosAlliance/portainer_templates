@@ -1,22 +1,22 @@
-version: '3.3'
 services:
   zephyr_connect:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/zephyr-connect}:${TAG:-latest}
-    container_name: zephyr_connect-${INSTANCE_NAME}
+    container_name: zephyr-connect-${INSTANCE_NAME}
+    hostname: zephyr-connect-${INSTANCE_NAME}
+    restart: unless-stopped
     command: "/bin/ips-start"
     cap_add:
       - SYS_NICE
       - NET_RAW
       - NET_ADMIN
       - NET_BIND_SERVICE
-    network_mode: "host"
     environment:
      - IFACE_AOIP=${IFACE_AOIP}
      - IFACE_EXT=${IFACE_EXT}
+    network_mode: "host"
     volumes:
-     - /opt/telos/zephyr_connect-${INSTANCE_NAME}/ZephConnConfig:/etc/Axia/EngConf
-     - /opt/telos/zephyr_connect-${INSTANCE_NAME}/ZephConnData:/var/lib/ZephConn
+     - /opt/telos/zephyr-connect-${INSTANCE_NAME}/ZephConnConfig:/etc/Axia/EngConf
+     - /opt/telos/zephyr-connect-${INSTANCE_NAME}/ZephConnData:/var/lib/ZephConn
     tmpfs:
      - /tmp
 

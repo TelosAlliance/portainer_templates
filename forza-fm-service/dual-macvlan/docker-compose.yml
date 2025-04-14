@@ -1,69 +1,73 @@
-version: '3'
 services:
   forza:
     image: ${REPOSITORY:-quay.io/telosalliance/forza-fm}:${FORZA_TAG:-latest}
-    container_name: forza-${STACK_NAME}
-    hostname: forza-${STACK_NAME}
+    container_name: forza-fm-${STACK_NAME}
+    hostname: forza-fm-${STACK_NAME}
     restart: unless-stopped
+    user: ${TAC_UID:-0}:${TAC_GID:-0}
     cap_add:
       - SYS_NICE
       - IPC_LOCK
       - SYS_RAWIO
       - NET_BROADCAST
       - NET_BIND_SERVICE
-      - NET_RAW
-    user: ${TAC_UID:-0}:${TAC_GID:-0}
-    networks:
-      ext1macvlan:
-        ipv4_address: ${FORZA_EXT1MACVLAN}      
-      telosmacvlan:
-        ipv4_address: ${FORZA_TELOSMACVLAN}
+      - NET_RAW     
     environment:
+      - HTTP_PORT=${FORZA_HTTP_PORT:-80}
       - IFACE_AOIP=${IFACE_AOIP:-eth1}
       - EX_CLOCK_SOURCE=${EX_CLOCK_SOURCE:-ptp-snooping}
       - EX_AOIP_CLOCK=${EX_AOIP_CLOCK:-0}
       - EX_PTP_DOMAIN=${EX_PTP_DOMAIN:-0}
       - EX_AOIP_TASK_RATE=${FORZA_AOIP_TASK_RATE:-200}
       - EX_RT_CPU=${FORZA_EX_RT_CPU}
-      - HTTP_PORT=${FORZA_HTTP_PORT:-80}
+    networks:
+      telosmacvlan:
+        ipv4_address: ${FORZA_IFACE_AOIP_IPV4_ADDRESS}
+      ext1macvlan:
+        ipv4_address: ${FORZA_IFACE_EXT_IPV4_ADDRESS} 
     volumes:
-      - /opt/telos/forza-${STACK_NAME}/forza_data:/data
+      - /opt/telos/forza-fm-${INSTANCE_NAME}/forza_data:/data
+
   fm-transport:
     image: ${REPOSITORY:-quay.io/telosalliance/fm-transport}:${FM_TRANSPORT_TAG:-latest}
     container_name: fm-transport-${STACK_NAME}
     hostname: fm-transport-${STACK_NAME}
     restart: unless-stopped
-    cap_add:
-      - SYS_NICE
-      - IPC_LOCK
-      - NET_BROADCAST
-      - SYS_RAWIO
-      - NET_BIND_SERVICE
-      - NET_RAW
     user: ${TAC_UID:-0}:${TAC_GID:-0}
+    environment:
+      - HTTP_PORT=${FM_TRANSPORT_HTTP_PORT:-80}
+      - IFACE_AOIP=${IFACE_AOIP:-eth0}
     networks:
       telosmacvlan:
-        ipv4_address: ${FM_TRANSPORT_TELOSMACVLAN}
+        ipv4_address: ${FM_TRANSPORT_IFACE_AOIP_IPV4_ADDRESS}
       ext1macvlan:
-        ipv4_address: ${FM_TRANSPORT_EXT1MACVLAN}
-    environment:
-      - IFACE_AOIP=${IFACE_AOIP:-eth1}
-      - EX_CLOCK_SOURCE=${EX_CLOCK_SOURCE:-ptp-snooping}
-      - EX_AOIP_CLOCK=${EX_AOIP_CLOCK:-0}
-      - EX_PTP_DOMAIN=${EX_PTP_DOMAIN:-0}
-      - EX_AOIP_TASK_RATE=${FM_TRANSPORT_AOIP_TASK_RATE:-200}
-      - EX_RT_CPU=${FM_TRANSPORT_EX_RT_CPU}
-      - HTTP_PORT=${FM_TRANSPORT_HTTP_PORT:-80}
+        ipv4_address: ${FM_TRANSPORT_IFACE_EXT_IPV4_ADDRESS}
     volumes:
-      - /opt/telos/fm-transport-${STACK_NAME}/mpx-data:/data
+      - /opt/telos/fm-transport-${STACK_NAME}/data:/data
 
-volumes:
-  forza_data:
+  omnia-rds:
+    image: ${REPOSITORY:-quay.io/telosalliance/omnia-rds-generator}:${OMNIA_RDS_TAG:-latest}
+    container_name: omnia-rds-${STACK_NAME}
+    hostname: omnia-rds-${STACK_NAME}
+    restart: unless-stopped
+    user: ${TAC_UID:-0}:${TAC_GID:-0}
+    environment:
+      - HTTP_PORT=${OMNIA_RDS_HTTP_PORT:-80}
+    networks:
+      telosmacvlan:
+        ipv4_address: ${OMNIA_RDS_IFACE_AOIP_IPV4_ADDRESS}
+      ext1macvlan:
+        ipv4_address: ${OMNIA_RDS_IFACE_EXT_IPV4_ADDRESS}
+    volumes:
+      - /opt/telos/omnia-rds-${STACK_NAME}/data:/data
 
 networks:
   telosmacvlan:
-    external:
-      name: telosmacvlan
+    name: telosmacvlan
+    external: true
   ext1macvlan:
-    external:
-      name: ext1macvlan
+    name: ext1macvlan
+    external: true
+
+volumes:
+  forza_data:

@@ -1,13 +1,10 @@
-version: '2.4'
 services:
   beacon:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/beacon}:${TAG:-latest}
     container_name: beacon-${INSTANCE_NAME}
     hostname: beacon-${INSTANCE_NAME}
+    restart: unless-stopped
     network_mode: host
     volumes:
       - /opt/telos/beacon-${INSTANCE_NAME}:/config:z
       - /etc/telos:/etc/telos:ro
-
-#WARNING: As of 3 March 2023 we have not made the proxy server run for beacon effectively when run in host mode. That said it likely is possible so I am including the container. 

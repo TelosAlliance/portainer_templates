@@ -1,23 +1,24 @@
-version: '2.4'
 services:
   iqs:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/iqs}:${TAG:-latest}
-    sysctls:
-      - net.ipv4.igmp_max_memberships=256
     container_name: iqs-${INSTANCE_NAME}
     hostname: iQs-${INSTANCE_NAME}
-    networks:
-      telosmacvlan:
-        ipv4_address: ${IPV4_ADDRESS}
-    volumes:
-      - /opt/telos/iqs-{INSTANCE_NAME}/config:/config
+    restart: unless-stopped
+    sysctls:
+      - net.ipv4.igmp_max_memberships=256
     cap_add:
       - SYS_NICE
       - NET_ADMIN
-volumes:
-  config:
+    networks:
+      telosmacvlan:
+        ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
+    volumes:
+      - /opt/telos/iqs-{INSTANCE_NAME}/config:/config
+
 networks:
   telosmacvlan:
-    external:
-      name: telosmacvlan
+    name: telosmacvlan
+    external: true
+
+volumes:
+  config:

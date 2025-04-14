@@ -1,21 +1,20 @@
 services:
-  fm-transport:
-    image: ${REPOSITORY:-quay.io/telosalliance/fm-transport}:${TAG:-latest}
-    container_name: fm-transport-${INSTANCE_NAME}
-    hostname: fm-transport-${INSTANCE_NAME}
+  omnia-rds:
+    image: ${REPOSITORY:-quay.io/telosalliance/omnia-rds-generator}:${TAG:-latest}
+    container_name: omnia-rds-${INSTANCE_NAME}
+    hostname: omnia-rds-${INSTANCE_NAME}
     restart: unless-stopped
     user: ${TAC_UID:-0}:${TAC_GID:-0}
     environment:
       - HTTP_PORT=${HTTP_PORT:-80}
-      - IFACE_AOIP=${IFACE_AOIP:-eth0}
     networks:
       telosmacvlan:
         ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
       ext1macvlan:
         ipv4_address: ${IFACE_EXT_IPV4_ADDRESS}
     volumes:
-      - /opt/telos/fm-transport-${INSTANCE_NAME}/data:/data
-     
+      - /opt/telos/omnia-rds-${INSTANCE_NAME}/data:/data
+
 networks:
   telosmacvlan:
     external: true

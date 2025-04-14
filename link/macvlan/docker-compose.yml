@@ -1,27 +1,26 @@
-version: '2.4'
 services:
   vip:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/intercom}:${TAG:-latest}
     container_name: link-${INSTANCE_NAME}
     hostname: link-${INSTANCE_NAME}
+    restart: unless-stopped
     privileged: true
+    cap_add:
+      - SYS_NICE
     environment:
       - DEVTYPE=link${LINK_COUNT:-8}
       - LICENSESERVER
       - NETIF_AOIP=${IFACE_AOIP:-eth0}
     networks:
       telosmacvlan:
-        ipv4_address: ${IPV4_ADDRESS}
+        ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/link-${INSTANCE_NAME}/config:/config
-    cap_add:
-      - SYS_NICE
 
 volumes:
   config:
 
 networks:
   telosmacvlan:
-    external:
-      name: telosmacvlan
+    name: telosmacvlan
+    external: true

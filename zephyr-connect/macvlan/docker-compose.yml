@@ -13,13 +13,11 @@ services:
       - NET_ADMIN
       - NET_BIND_SERVICE
     environment:
-     - IFACE_AOIP=${IFACE_AOIP:-eth1}
-     - IFACE_EXT=${IFACE_EXT:-eth0}
+     - IFACE_AOIP=${IFACE_AOIP:-eth0}
+     - IFACE_EXT=${IFACE_AOIP:-eth0}
     networks:
       telosmacvlan:
           ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
-      ext1macvlan:
-          ipv4_address: ${IFACE_EXT_IPV4_ADDRESS}
     volumes:
      - /opt/telos/zephyr-connect-${INSTANCE_NAME}/ZephConnConfig:/etc/Axia/EngConf
      - /opt/telos/zephyr-connect-${INSTANCE_NAME}/ZephConnData:/var/lib/ZephConn
@@ -29,9 +27,6 @@ services:
 networks:
   telosmacvlan:
     name: telosmacvlan
-    external: true
-  ext1macvlan:
-    name: ext1macvlan
     external: true
 
 volumes:

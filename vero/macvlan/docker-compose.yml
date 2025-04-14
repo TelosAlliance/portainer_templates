@@ -1,10 +1,11 @@
-version: '3'
 services:
   mp500:
     image: ${REPOSITORY:-quay.io/telosalliance/vero}:${TAG:-latest}
-    container_name: ${INSTANCE_NAME}
-    command: "exsvcmgr -c /model/mp500.json EngineCore"
+    container_name: vero-${INSTANCE_NAME}
+    hostname: vero-${INSTANCE_NAME}
     restart: unless-stopped
+    user: ${FORZA_UID:-0}:${FORZA_GID:-0}
+    command: "exsvcmgr -c /model/mp500.json EngineCore"
     cap_add:
       - SYS_NICE
       - IPC_LOCK
@@ -15,19 +16,23 @@ services:
       # Note that NET_BIND_SERVICE and NET_RAW are available by default
       # in a Docker container.  I list them as needed for documentation
       # or for those that may want to drop other capabilities
-    user: ${FORZA_UID:-0}:${FORZA_GID:-0}
-    networks:
-      telosmacvlan:
-        ipv4_address: ${IPV4_ADDRESS}
     environment:
+      - HTTP_PORT
       - EX_AOIP_INTERFACE
       - EX_CLOCK_SOURCE
       - EX_AOIP_CLOCK
       - EX_PTP_DOMAIN
       - EX_RT_CPU
-      - HTTP_PORT
+    networks:
+      telosmacvlan:
+        ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/vero-${INSTANCE_NAME}/mp500_data:/data
+
+networks:
+  telosmacvlan:
+    name: telosmacvlan
+    external: true
 
 volumes:
   mp500_data:
@@ -35,9 +40,3 @@ volumes:
 # name with the name of the directory containing the docker-compose.yml
 # file.  That way, different containers will have different volumes and
 # not end up trying to share the same database file.
-
-
-networks:
-  telosmacvlan:
-    external:
-      name: telosmacvlan

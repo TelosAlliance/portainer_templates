@@ -20,17 +20,17 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
           "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "REQUIRED. Network interface on the host system that AoIP traffic is routed to. Examples include eno1, eno0, etc."
+          "label": "AoIP network interface",
+          "description": "REQUIRED. Network interface on the host system for AoIP traffic. (eg: eth0, eno1, enp1s0)"
         }
       ]
     },
@@ -53,17 +53,17 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
-          "name": "IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "IPv4 Address"
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
     },
@@ -86,27 +86,22 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
-          "name": "AOIP_IPV4_ADDRESS",
-          "label": "AOIP IP Address",
-          "description": "IP Address for the AoIP Network"
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         },
         {
-          "name": "EXT_IPV4_ADDRESS",
-          "label": "External IP Address",
-          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
-        },
-        {
-          "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Network interface in the PDMX container that AoIP traffic is routed to. Defaults to eth1 (the default for Telosmacvlan in PDMX)"
+          "name": "IFACE_EXT_IPV4_ADDRESS",
+          "label": "External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
         }
       ]
     },
@@ -129,12 +124,12 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         }
       ]
     },
@@ -157,17 +152,17 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
-          "name": "IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "IPv4 Address"
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
     },
@@ -190,22 +185,22 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
-          "name": "AOIP_IPV4_ADDRESS",
-          "label": "AOIP IP Address",
-          "description": "IP Address for the AoIP Network"
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         },
         {
-          "name": "EXT_IPV4_ADDRESS",
-          "label": "External IP Address",
-          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
+          "name": "IFACE_EXT_IPV4_ADDRESS",
+          "label": "External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
         }
       ]
     },
@@ -228,18 +223,28 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
           "name": "IFACE_AOIP_SYNC",
-          "label": "Clock Source Interface",
-          "description": "Sets the interface we will listens for clock on"
-        }               
+          "label": "AoIP clock network interface",
+          "description": "REQUIRED. Network interface for AoIP clock traffic. (eg: eth0, eno1, enp1s0)"
+        },
+        {
+          "name": "SYNC_CLOCK",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Default option | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "SYNC_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
+        }
       ]
     },
     {
@@ -261,17 +266,32 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
-          "name": "IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "IPv4 Address"
+          "name": "IFACE_AOIP_SYNC",
+          "label": "AoIP clock network interface",
+          "description": "Network interface for AoIP clock traffic. (eg: eth0, eno1, enp1s0)"
+        },
+        {
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Network interface in the container for AoIP traffic. (eg: eth0, eno1, enp1s0)"
+        },
+        {
+          "name": "SYNC_CLOCK",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Default option | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "SYNC_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         }
       ]
     },
@@ -294,196 +314,184 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
-          "name": "AOIP_IPV4_ADDRESS",
-          "label": "AOIP IP Address",
-          "description": "IP Address for the AoIP Network"
+          "name": "IFACE_AOIP_SYNC",
+          "label": "AoIP clock network interface",
+          "description": "Network interface for AoIP clock traffic. (eg: eth0, eno1, enp1s0)"
         },
         {
-          "name": "EXT_IPV4_ADDRESS",
-          "label": "External IP Address",
-          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "IFACE_EXT_IPV4_ADDRESS",
+          "label": "External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "SYNC_CLOCK",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Default option | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "SYNC_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         }
       ]
     },
     {
       "id": 10,
       "type": 3,
-      "title": "Omnia Forza HDS (host)",
-      "description": "Forza audio processor with `host` networking",
+      "title": "Telos Zephyr Connect (host)",
+      "description": "Telos Zephyr Connect Codec with `host` networking",
       "categories": [
-        "omnia",
-        "forza",
+        "telos",
+        "zephyr connect",
         "host"
       ],
       "platform": "linux",
       "repository": {
         "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "forza/host/docker-compose.yml"
+        "stackfile": "zephyr-connect/host/docker-compose.yml"
       },
       "env": [
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
           "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+          "label": "AoIP network interface",
+          "description": "REQUIRED. Network interface on the host system for AoIP traffic. (eg: eth0, eno1, enp1s0)"
         },
         {
-          "name": "EX_CLOCK_SOURCE",
-          "label": "Audio timebase source",
-          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
-        },
-        {
-          "name": "EX_AOIP_CLOCK",
-          "label": "AoIP Clock Type",
-          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
-        },
-        {
-          "name": "EX_PTP_DOMAIN",
-          "label": "PTP Domain Number",
-          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
-        },
-        {
-          "name": "EX_AOIP_TASK_RATE",
-          "label": "Task Execution",
-          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
-        },
-        {
-          "name": "EX_RT_CPU",
-          "label": "Realtime Reserved CPU",
-          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
-        },
-        {
-          "name": "HTTP_PORT",
-          "label": "Web Interface TCP Port",
-          "description": "TCP Port used to run the web server that serves the GUI and API"
+          "name": "IFACE_EXT",
+          "label": "External network interface",
+          "description": "REQUIRED. Network interface on host system for streaming and web browser traffic. (eg: eth0, eno1, enp1s0). It is recommended to list the IFACE_AOIP interface as well to allow GUI access from both networks. This is done via csv. (eg: eno1, eno2)"
         }
       ]
     },
     {
       "id": 11,
       "type": 3,
-      "title": "Omnia Forza HDS (macvlan)",
-      "description": "Forza audio processor with `macvlan` networking",
+      "title": "Telos Zephyr Connect (macvlan)",
+      "description": "Telos Zephyr Connect Codec with `single macvlan` networking",
       "categories": [
-        "omnia",
-        "forza",
+        "telos",
+        "zephyr connect",
         "macvlan"
       ],
       "platform": "linux",
       "repository": {
         "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "forza/macvlan/docker-compose.yml"
+        "stackfile": "zephyr-connect/single-macvlan/docker-compose.yml"
       },
       "env": [
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
-          "name": "IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "Static IPv4 address to assign to the container. REQUIRED"
-        },
-        {
-          "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
-        },
-        {
-          "name": "EX_CLOCK_SOURCE",
-          "label": "Audio timebase source",
-          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
-        },
-        {
-          "name": "EX_AOIP_CLOCK",
-          "label": "AoIP Clock Type",
-          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
-        },
-        {
-          "name": "EX_PTP_DOMAIN",
-          "label": "PTP Domain Number",
-          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
-        },
-        {
-          "name": "EX_AOIP_TASK_RATE",
-          "label": "Task Execution",
-          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
-        },
-        {
-          "name": "EX_RT_CPU",
-          "label": "Realtime Reserved CPU",
-          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
-        },
-        {
-          "name": "HTTP_PORT",
-          "label": "Web Interface TCP Port",
-          "description": "TCP Port used to run the web server that serves the GUI and API"
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
     },
     {
       "id": 12,
       "type": 3,
-      "title": "Omnia Forza HDS (dual-macvlan)",
-      "description": "Forza audio processor with `macvlan` networking",
+      "title": "Telos Zephyr Connect (dual-macvlan)",
+      "description": "Telos Zephyr Connect Codec with `dual macvlan` networking",
       "categories": [
-        "omnia",
-        "forza",
-        "dual-macvlan"
+        "telos",
+        "zephyr connect",
+        "macvlan"
       ],
       "platform": "linux",
       "repository": {
         "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "forza/dual-macvlan/docker-compose.yml"
+        "stackfile": "zephyr-connect/dual-macvlan/docker-compose.yml"
       },
       "env": [
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
-          "name": "AOIP_IPV4_ADDRESS",
-          "label": "AOIP IP Address",
-          "description": "IP Address for the AoIP Network"
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         },
         {
-          "name": "EXT_IPV4_ADDRESS",
-          "label": "External IP Address",
-          "description": "IP Address for the External Network. The external network the non-AoIP network. The network that can connect to the internet, a license server, etc."
+          "name": "IFACE_EXT_IPV4_ADDRESS",
+          "label": "External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": 3,
+      "title": "Omnia Forza HDS (host)",
+      "description": "Omnia Forza HDS audio processor with `host` networking",
+      "categories": [
+        "omnia",
+        "forza-hds",
+        "host"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "forza-hds/host/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default."
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API."
         },
         {
           "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+          "label": "AoIP network interface",
+          "description": "REQUIRED. Network interface on the host system for AoIP traffic. (eg: eth0, eno1, enp1s0)"
         },
         {
           "name": "EX_CLOCK_SOURCE",
@@ -497,8 +505,8 @@
         },
         {
           "name": "EX_PTP_DOMAIN",
-          "label": "PTP Domain Number",
-          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         },
         {
           "name": "EX_AOIP_TASK_RATE",
@@ -508,23 +516,149 @@
         {
           "name": "EX_RT_CPU",
           "label": "Realtime Reserved CPU",
-          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
-        },
-        {
-          "name": "HTTP_PORT",
-          "label": "Web Interface TCP Port",
-          "description": "TCP Port used to run the web server that serves the GUI and API"
+          "description": "CPU number (using OS numbering) on which the container will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs."
         }
       ]
     },
     {
-      "id": 13,
+      "id": 14,
       "type": 3,
-      "title": "Omnia Forza FM Service (macvlan)",
-      "description": "Forza FM audio processor with `macvlan` networking",
+      "title": "Omnia Forza HDS (macvlan)",
+      "description": "Omnia Forza HDS audio processor with `macvlan` networking",
       "categories": [
         "omnia",
-        "forza-fm",
+        "forza-hds",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "forza-hds/macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default."
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API."
+        },
+        {
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
+        },
+        {
+          "name": "EX_AOIP_TASK_RATE",
+          "label": "Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "EX_RT_CPU",
+          "label": "Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which the container will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "type": 3,
+      "title": "Omnia Forza HDS (dual-macvlan)",
+      "description": "Omnia Forza HDS audio processor with `dual-macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza-hds",
+        "dual-macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "forza-hds/dual-macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default."
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API."
+        },
+        {
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "IFACE_EXT_IPV4_ADDRESS",
+          "label": "External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
+        },
+        {
+          "name": "EX_AOIP_TASK_RATE",
+          "label": "Task Execution",
+          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
+        },
+        {
+          "name": "EX_RT_CPU",
+          "label": "Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which the container will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": 3,
+      "title": "Omnia Forza FM Service (macvlan)",
+      "description": "Omnia Forza FM service with `macvlan` networking",
+      "categories": [
+        "omnia",
+        "forza-fm-service",
         "macvlan"
       ],
       "platform": "linux",
@@ -536,22 +670,22 @@
         {
           "name": "STACK_NAME",
           "label": "Stack Name",
-          "description": "Set the container names, and hostnames of each container in the stack."
+          "description": "Set the container names and hostnames of each container in the stack."
         },
         {
           "name": "FORZA_TAG",
-          "label": "Forza FM Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "label": "Forza FM software version tag",
+          "description": "Version of software. Leave blank to use default."
         },
         {
-          "name": "FORZA_TELOSMACVLAN",
-          "label": "Forza FM AOIP IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+          "name": "FORZA_HTTP_PORT",
+          "label": "Forza Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API."
         },
         {
-          "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+          "name": "FORZA_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "Forza FM AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         },
         {
           "name": "EX_CLOCK_SOURCE",
@@ -565,13 +699,13 @@
         },
         {
           "name": "EX_PTP_DOMAIN",
-          "label": "PTP Domain Number",
-          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         },
         {
           "name": "FORZA_EX_RT_CPU",
           "label": "Forza Realtime Reserved CPU",
-          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+          "description": "CPU number (using OS numbering) on which the container will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs."
         },
         {
           "name": "FORZA_AOIP_TASK_RATE",
@@ -579,45 +713,45 @@
           "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
         },
         {
-          "name": "FORZA_HTTP_PORT",
-          "label": "Forza Web Interface TCP Port",
-          "description": "TCP Port used to run the web server that serves the GUI and API"
-        },
-        {
           "name": "FM_TRANSPORT_TAG",
-          "label": "Forza FM Transport Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "FM_TRANSPORT_TELOSMACVLAN",
-          "label": "FM Transport AOIP IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
-        },
-        {
-          "name": "FM_TRANSPORT_AOIP_TASK_RATE",
-          "label": "FM Transport Task Execution",
-          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
-        },
-        {
-          "name": "FM_TRANSPORT_EX_RT_CPU",
-          "label": "FM Transport Realtime Reserved CPU",
-          "description": "CPU number (using OS numbering) on which FM Transport will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+          "label": "Forza FM Transport software version tag",
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "FM_TRANSPORT_HTTP_PORT",
           "label": "FM Transport Web Interface TCP Port",
-          "description": "TCP Port used to run the web server that serves the GUI and API"
+          "description": "TCP Port used to run the web server that serves the GUI and API."
+        },
+        {
+          "name": "FM_TRANSPORT_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "FM Transport AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "OMNIA_RDS_TAG",
+          "label": "Omnia RDS software version tag",
+          "description": "Version of software. Leave blank to use default."        
+        },
+        {
+          "name": "OMNIA_RDS_HTTP_PORT",
+          "label": "Omnia RDS Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API."
+        },
+        {
+          "name": "OMNIA_RDS_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "Omnia RDS AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
     },
     {
-      "id": 14,
+      "id": 17,
       "type": 3,
       "title": "Omnia Forza FM Service (dual-macvlan)",
-      "description": "Forza FM audio processor with `dual-macvlan` networking",
+      "description": "Omnia Forza FM service with `dual-macvlan` networking",
       "categories": [
         "omnia",
-        "forza-fm",
+        "forza-fm-service",
         "dual-macvlan"
       ],
       "platform": "linux",
@@ -629,27 +763,7 @@
         {
           "name": "STACK_NAME",
           "label": "Stack Name",
-          "description": "Set the container names, and hostnames of each container in the stack."
-        },
-        {
-          "name": "FORZA_TAG",
-          "label": "Forza FM Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "FORZA_EXT1MACVLAN",
-          "label": "Forza FM External IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
-        },
-        {
-          "name": "FORZA_TELOSMACVLAN",
-          "label": "Forza FM AOIP IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
-        },
-        {
-          "name": "IFACE_AOIP",
-          "label": "AoIP Network Interface",
-          "description": "Name of Ethernet Interface for AoIP traffic. Use IFADDR_ANY for kernel routing"
+          "description": "Set the container names and hostnames of each container in the stack."
         },
         {
           "name": "EX_CLOCK_SOURCE",
@@ -663,13 +777,28 @@
         },
         {
           "name": "EX_PTP_DOMAIN",
-          "label": "PTP Domain Number",
-          "description": "Applies to ptp-snooping with PTP packets only: Domain Number of PTP master"
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         },
         {
-          "name": "FORZA_EX_RT_CPU",
-          "label": "Forza Realtime Reserved CPU",
-          "description": "CPU number (using OS numbering) on which Forza will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+          "name": "FORZA_TAG",
+          "label": "Forza FM software version tag",
+          "description": "Version of software. Leave blank to use default."
+        },
+        {
+          "name": "FORZA_HTTP_PORT",
+          "label": "Forza Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API."
+        },
+        {
+          "name": "FORZA_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "Forza FM AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "FORZA_IFACE_EXT_IPV4_ADDRESS",
+          "label": "Forza FM External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
         },
         {
           "name": "FORZA_AOIP_TASK_RATE",
@@ -677,44 +806,54 @@
           "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
         },
         {
-          "name": "FORZA_HTTP_PORT",
-          "label": "Forza Web Interface TCP Port",
-          "description": "TCP Port used to run the web server that serves the GUI and API"
+          "name": "FORZA_EX_RT_CPU",
+          "label": "Forza Realtime Reserved CPU",
+          "description": "CPU number (using OS numbering) on which the container will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs."
         },
         {
           "name": "FM_TRANSPORT_TAG",
-          "label": "Forza FM Transport Software version tag",
-          "description": "Version of software. Leave blank to use default"
-        },
-        {
-          "name": "FM_TRANSPORT_EXT1MACVLAN",
-          "label": "FM Transport External IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
-        },
-        {
-          "name": "FM_TRANSPORT_TELOSMACVLAN",
-          "label": "FM Transport AOIP IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
-        },
-        {
-          "name": "FM_TRANSPORT_AOIP_TASK_RATE",
-          "label": "FM Transport Task Execution",
-          "description":"Set the rate at which AoIP packets are sent. This not packet length. It is how frequently packets are sent. The default is 1000 and ideal for most systems. More latency sensitive system should use lower numbers."
-        },
-        {
-          "name": "FM_TRANSPORT_EX_RT_CPU",
-          "label": "FM Transport Realtime Reserved CPU",
-          "description": "CPU number (using OS numbering) on which FM Transport will always run realtime tasks and never run non-realtime tasks. Leave blank to run all tasks on all CPUs"
+          "label": "Forza FM Transport software version tag",
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "FM_TRANSPORT_HTTP_PORT",
           "label": "FM Transport Web Interface TCP Port",
-          "description": "TCP Port used to run the web server that serves the GUI and API"
+          "description": "TCP Port used to run the web server that serves the GUI and API."
+        },
+        {
+          "name": "FM_TRANSPORT_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "FM Transport AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "FM_TRANSPORT_IFACE_EXT_IPV4_ADDRESS",
+          "label": "FM Transport External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "OMNIA_RDS_TAG",
+          "label": "Omnia RDS software version tag",
+          "description": "Version of software. Leave blank to use default."
+        },
+        {
+          "name": "OMNIA_RDS_HTTP_PORT",
+          "label": "Omnia RDS Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API."
+        },
+        {
+          "name": "OMNIA_RDS_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "Omnia RDS AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "OMNIA_RDS_IFACE_EXT_IPV4_ADDRESS",
+          "label": "Omnia RDS External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
         }
       ]
     },
     {
-      "id": 15,
+      "id": 18,
       "type": 3,
       "title": "PTP4L (host)",
       "description": "Precision Time Protocol Daemon for Linux with `host` networking",
@@ -732,12 +871,12 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
           "name": "PTP4L_ARGS",
@@ -747,7 +886,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": 19,
       "type": 3,
       "title": "PTP4L (macvlan)",
       "description": "Precision Time Protocol Daemon for Linux with `macvlan` networking",
@@ -765,12 +904,12 @@
         {
           "name": "TAG",
           "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "description": "Version of software. Leave blank to use default."
         },
         {
           "name": "INSTANCE_NAME",
-          "label": "Container Name",
-          "description": "Set the container name, hostname, and studio name for an Altus"
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
         },
         {
           "name": "PTP4L_ARGS",
@@ -778,14 +917,14 @@
           "description": "Command line arguments for ptp4l. Details here: linux.die.net/man/8/ptp4l. Leave blank if unsure"
         },
         {
-          "name": "IPV4_ADDRESS",
-          "label": "IPv4 Address",
-          "description": "IPv4 Address"
+          "name": "IFACE_AOIP_IPV4_ADDRESS",
+          "label": "AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
     },
     {
-      "id": 17,
+      "id": 20,
       "type": 3,
       "title": "WebRTC Service (macvlan)",
       "description": "Proxy service connected to the telosmacvlan network",
@@ -803,32 +942,32 @@
         {
           "name": "STACK_NAME",
           "label": "Stack Name",
-          "description": "Set the container names, and hostnames of each container in the stack."
+          "description": "Set the container names and hostnames of each container in the stack."
         },
         {
           "name": "NGINX_TAG",
-          "label": "Software version tag for NGINX",
-          "description": "Version of NGINX software. Leave blank to use default"
+          "label": "NGINX software version tag",
+          "description": "Version of NGINX software. Leave blank to use default."
         },
         {
-          "name": "NGINX_TELOSMACVLAN",
-          "label": "NGINX AoIP IP address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+          "name": "NGINX_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "NGINX AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         },
         {
           "name": "TAP_TAG",
-          "label": "Software version tag for Telos Auto Proxy",
-          "description": "Version of Telos Auto Proxy software. Leave blank to use default"
+          "label": "Telos Auto Proxy software version tag",
+          "description": "Version of Telos Auto Proxy software. Leave blank to use default."
         },
         {
           "name": "ACME_TAG",
-          "label": "Software version tag for ACME",
-          "description": "Version of ACME. Leave blank to use default"
+          "label": "ACME software version tag",
+          "description": "Version of ACME. Leave blank to use default."
         },
         {
-          "name": "ACME_TELOSMACVLAN",
-          "label": "ACME AoIP IP address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+          "name": "ACME_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "ACME AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         },
         {
           "name": "DOMAINNAME",
@@ -847,13 +986,13 @@
         },
         {
           "name": "COTURN_TAG",
-          "label": "Coturn Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "label": "Coturn software version tag",
+          "description": "Version of software. Leave blank to use default."
         },
         {
-          "name": "COTURN_TELOSMACVLAN",
-          "label": "Coturn AoIP IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+          "name": "COTURN_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "Coturn AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         },
         {
           "name": "PUBLICIP",
@@ -873,27 +1012,27 @@
         {
           "name": "MINIMUMPORT",
           "label": "Minimum Turn Port",
-          "description": "Lowest number port used for turn connection. Leave this blank to use the default port number (49152) which works with most firewalls."
+          "description": "Lowest number port used for TURN connection. Leave this blank to use the default port number (49152) which works with most firewalls."
         },
         {
           "name": "MAXIMUMPORT",
           "label": "Maximum Turn Port",
-          "description": "Highest number port used for turn connection. Leave this blank to use the default port number (65535) which works with most firewalls."
+          "description": "Highest number port used for TURN connection. Leave this blank to use the default port number (65535) which works with most firewalls."
         },
         {
           "name": "BEACON_TAG",
-          "label": "Beacon Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "label": "Beacon software version tag",
+          "description": "Version of software. Leave blank to use default."
         },
         {
-          "name": "BEACON_TELOSMACVLAN",
-          "label": "Beacon AoIP IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+          "name": "BEACON_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "Beacon AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
     },
     {
-      "id": 18,
+      "id": 21,
       "type": 3,
       "title": "WebRTC Service (dual macvlan)",
       "description": "Proxy service  web server connect to the ext1macvlan and telosmacvlan network",
@@ -911,37 +1050,37 @@
         {
           "name": "STACK_NAME",
           "label": "Stack Name",
-          "description": "Set the container names, and hostnames of each container in the stack."
+          "description": "Set the container names and hostnames of each container in the stack."
         },
         {
           "name": "NGINX_TAG",
-          "label": "Software version tag for NGINX",
-          "description": "Version of NGINX software. Leave blank to use default"
+          "label": "NGINX software version tag",
+          "description": "Version of NGINX software. Leave blank to use default."
         },
         {
-          "name": "NGINX_EXT1MACVLAN",
-          "label": "NGINX External IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+          "name": "NGINX_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "NGINX AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         },
         {
-          "name": "NGINX_TELOSMACVLAN",
-          "label": "NGINX AoIP IP address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+          "name": "NGINX_IFACE_EXT_IPV4_ADDRESS",
+          "label": "NGINX External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
         },
         {
           "name": "TAP_TAG",
-          "label": "Software version tag for Telos Auto Proxy",
-          "description": "Version of Telos Auto Proxy software. Leave blank to use default"
+          "label": "Telos Auto Proxy software version tag",
+          "description": "Version of Telos Auto Proxy software. Leave blank to use default."
         },
         {
           "name": "ACME_TAG",
-          "label": "Software version tag for ACME",
-          "description": "Version of ACME. Leave blank to use default"
+          "label": "ACME software version tag",
+          "description": "Version of ACME. Leave blank to use default."
         },
         {
-          "name": "ACME_EXT1MACVLAN",
-          "label": "ACME External IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+          "name": "ACME_IFACE_EXT_IPV4_ADDRESS",
+          "label": "ACME External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
         },
         {
           "name": "DOMAINNAME",
@@ -960,13 +1099,13 @@
         },
         {
           "name": "COTURN_TAG",
-          "label": "Coturn Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "label": "Coturn software version tag",
+          "description": "Version of software. Leave blank to use default."
         },
         {
-          "name": "COTURN_EXT1MACVLAN",
-          "label": "Coturn External IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the ext1macvlan"
+          "name": "COTURN_IFACE_EXT_IPV4_ADDRESS",
+          "label": "Coturn External IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
         },
         {
           "name": "PUBLICIP",
@@ -986,22 +1125,22 @@
         {
           "name": "MINIMUMPORT",
           "label": "Minimum Turn Port",
-          "description": "Lowest number port used for turn connection. Leave this blank to use the default port number (49152) which works with most firewalls."
+          "description": "Lowest number port used for TURN connection. Leave this blank to use the default port number (49152) which works with most firewalls."
         },
         {
           "name": "MAXIMUMPORT",
           "label": "Maximum Turn Port",
-          "description": "Highest number port used for turn connection. Leave this blank to use the default port number (65535) which works with most firewalls."
+          "description": "Highest number port used for TURN connection. Leave this blank to use the default port number (65535) which works with most firewalls."
         },
         {
           "name": "BEACON_TAG",
-          "label": "Beacon Software version tag",
-          "description": "Version of software. Leave blank to use default"
+          "label": "Beacon software version tag",
+          "description": "Version of software. Leave blank to use default."
         },
         {
-          "name": "BEACON_TELOSMACVLAN",
-          "label": "Beacon AoIP IP Address",
-          "description": "Static IPv4 address assigned to the container. This address needs to fit in the telosmacvlan"
+          "name": "BEACON_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "Beacon AoIP IPv4 address",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
     }

@@ -1,17 +1,17 @@
-version: '2.4'
 services:
   beacon:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/beacon}:${TAG:-latest}
     container_name: beacon-${INSTANCE_NAME}
     hostname: beacon-${INSTANCE_NAME}
+    restart: unless-stopped
     networks:
       telosmacvlan:
-           ipv4_address: ${IPV4_ADDRESS}
+           ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/beacon-${INSTANCE_NAME}:/config:z
       - /etc/telos:/etc/telos:ro
+
 networks:
   telosmacvlan:
-    external:
-      name: telosmacvlan
+    name: telosmacvlan
+    external: true

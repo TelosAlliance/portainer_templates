@@ -1,9 +1,10 @@
-version: '2.4'
 services:
   vip:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/intercom}:${TAG:-latest}
+    restart: unless-stopped
     privileged: true
+    cap_add:
+      - SYS_NICE
     environment:
       - DEVTYPE=vip16
     networks:
@@ -11,13 +12,11 @@ services:
         ipv4_address: ${IPV4_ADDRESS}
     volumes:
       - config:/config
-    cap_add:
-      - SYS_NICE
-
-volumes:
-  config:
 
 networks:
   telosmacvlan:
-    external:
-      name: telosmacvlan
+    name: telosmacvlan
+    external: true
+
+volumes:
+  config:

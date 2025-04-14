@@ -1,10 +1,10 @@
-version: '3'
 services:
   forza:
     image: ${REPOSITORY:-quay.io/telosalliance/forza}:${TAG:-latest}
-    container_name: forza-${INSTANCE_NAME}
-    hostname: forza-${INSTANCE_NAME}
+    container_name: forza-hds-${INSTANCE_NAME}
+    hostname: forza-hds-${INSTANCE_NAME}
     restart: unless-stopped
+    user: ${TAC_UID:-0}:${TAC_GID:-0}
     cap_add:
       - SYS_NICE
       - IPC_LOCK
@@ -12,19 +12,17 @@ services:
       - NET_BROADCAST
       - NET_BIND_SERVICE
       - NET_RAW
-    user: ${TAC_UID:-0}:${TAC_GID:-0}
-    network_mode: "host"
     environment:
+      - HTTP_PORT=${HTTP_PORT:-80}
       - IFACE_AOIP=${IFACE_AOIP:-eth0}
       - EX_CLOCK_SOURCE=${EX_CLOCK_SOURCE:-ptp-snooping}
       - EX_AOIP_CLOCK=${EX_AOIP_CLOCK:-0}
       - EX_PTP_DOMAIN=${EX_PTP_DOMAIN:-0}
       - EX_AOIP_TASK_RATE=${EX_AOIP_TASK_RATE:-1000}
-      - EX_RT_CPU
-      - HTTP_PORT=${HTTP_PORT:-80}
-      - IFACE_WEBUI
+      - EX_RT_CPU=${EX_RT_CPU}
+    network_mode: "host"
     volumes:
-      - /opt/telos/forza-${INSTANCE_NAME}/forza_data:/data
+      - /opt/telos/forza-hds-${INSTANCE_NAME}/forza_data:/data
 
 volumes:
   forza_data:

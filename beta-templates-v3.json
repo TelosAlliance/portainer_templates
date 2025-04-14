@@ -381,6 +381,16 @@
           "name": "IFACE_AOIP_SYNC",
           "label": "AoIP clock network interface",
           "description": "REQUIRED. Network interface for AoIP clock traffic. (eg: eth0, eno1, enp1s0)"
+        },
+        {
+          "name": "SYNC_CLOCK",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Default option | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "SYNC_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         }
       ]
     },
@@ -419,6 +429,16 @@
           "name": "IFACE_AOIP_IPV4_ADDRESS",
           "label": "AoIP IPv4 address",
           "description": "REQUIRED. Network interface in the container for AoIP traffic. (eg: eth0, eno1, enp1s0)"
+        },
+        {
+          "name": "SYNC_CLOCK",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Default option | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "SYNC_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         }
       ]
     },
@@ -462,6 +482,16 @@
           "name": "IFACE_EXT_IPV4_ADDRESS",
           "label": "External IPv4 address",
           "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "SYNC_CLOCK",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Default option | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "SYNC_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         }
       ]
     },
@@ -505,6 +535,16 @@
           "name": "IFACE_AOIP_SYNC",
           "label": "AoIP clock network interface",
           "description": "Network interface for AoIP clock traffic. (eg: eth0, eno1, enp1s0)"
+        },
+        {
+          "name": "SYNC_CLOCK",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Default option | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "SYNC_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         }
       ]
     },
@@ -553,6 +593,16 @@
           "name": "IFACE_AOIP_IPV4_ADDRESS",
           "label": "AoIP IPv4 address",
           "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "SYNC_CLOCK",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Default option | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "SYNC_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         }
       ]
     },
@@ -606,6 +656,16 @@
           "name": "IFACE_EXT_IPV4_ADDRESS",
           "label": "External IPv4 address",
           "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "SYNC_CLOCK",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Default option | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "SYNC_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         }
       ]
     },

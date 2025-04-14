@@ -1,20 +1,19 @@
-version: '2.4'
 services:
   altus:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/altus}:${TAG:-latest}
     container_name: altus-${INSTANCE_NAME}
     hostname: altus-${INSTANCE_NAME}
-    network_mode: host
-    volumes:
-      - /opt/telos/altus-${INSTANCE_NAME}/config:/config
-      - /opt/telos/altus-${INSTANCE_NAME}/logs:/var/logs
+    restart: unless-stopped
     cap_add:
       - SYS_NICE
       - NET_ADMIN
     environment:
       - NDI_CONFIG_DIR=/root/.newtek
       - TA_AUTO_PROXY=true
+    network_mode: host
+    volumes:
+      - /opt/telos/altus-${INSTANCE_NAME}/config:/config
+      - /opt/telos/altus-${INSTANCE_NAME}/logs:/var/logs
 
 volumes:
   config:

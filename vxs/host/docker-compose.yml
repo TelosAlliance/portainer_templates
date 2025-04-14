@@ -1,21 +1,24 @@
-version: '2.4'
 services:
   vxs:
-    restart: unless-stopped
     image: ${REPOSITORY:-quay.io/telosalliance/vxs}:${TAG:-latest}
     container_name: vxs-${INSTANCE_NAME}
     hostname: vxs-${INSTANCE_NAME}
-    network_mode: host
+    restart: unless-stopped
+    user: ${TAC_UID:-0}:${TAC_GID:-0}
     sysctls:
       fs.mqueue.msg_max: 1024
     ulimits:
       rtprio: 60
       memlock: -1
-    cap_drop:
-      - all
     cap_add:
       - net_bind_service
-    user: ${TAC_UID:-0}:${TAC_GID:-0}
+    cap_drop:
+      - all
+    environment:
+      - IFACE_AOIP_SYNC
+      - SYNC_CLOCK=${SYNC_CLOCK:-ptp-snooping}
+      - SYNC_PTP_DOMAIN=${SYNC_PTP_DOMAN:-0}
+    network_mode: host
     volumes:
       - /dev/log:/dev/log
       - /opt/telos/vxs-${INSTANCE_NAME}/config:/etc/telos_vx
@@ -26,4 +29,3 @@ services:
 volumes:
   data:
   config:
-
