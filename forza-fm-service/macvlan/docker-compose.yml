@@ -41,20 +41,6 @@ services:
     volumes:
       - /opt/telos/fm-transport-${STACK_NAME}/data:/data
 
-  omnia-rds:
-    image: ${REPOSITORY:-quay.io/telosalliance/omnia-rds-generator}:${OMNIA_RDS_TAG:-latest}
-    container_name: omnia-rds-${STACK_NAME}
-    hostname: omnia-rds-${STACK_NAME}
-    restart: unless-stopped
-    user: ${TAC_UID:-0}:${TAC_GID:-0}
-    environment:
-      - HTTP_PORT=${OMNIA_RDS_HTTP_PORT:-80}
-    networks:
-      telosmacvlan:
-        ipv4_address: ${OMNIA_RDS_IFACE_AOIP_IPV4_ADDRESS}
-    volumes:
-      - /opt/telos/omnia-rds-${STACK_NAME}/data:/data
-
 networks:
   telosmacvlan:
     name: telosmacvlan

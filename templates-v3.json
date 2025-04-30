@@ -726,21 +726,6 @@
           "name": "FM_TRANSPORT_IFACE_AOIP_IPV4_ADDRESS",
           "label": "FM Transport AoIP IPv4 address",
           "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
-        },
-        {
-          "name": "OMNIA_RDS_TAG",
-          "label": "Omnia RDS software version tag",
-          "description": "Version of software. Leave blank to use default."        
-        },
-        {
-          "name": "OMNIA_RDS_HTTP_PORT",
-          "label": "Omnia RDS Web Interface TCP Port",
-          "description": "TCP Port used to run the web server that serves the GUI and API."
-        },
-        {
-          "name": "OMNIA_RDS_IFACE_AOIP_IPV4_ADDRESS",
-          "label": "Omnia RDS AoIP IPv4 address",
-          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
     },
@@ -828,26 +813,6 @@
         {
           "name": "FM_TRANSPORT_IFACE_EXT_IPV4_ADDRESS",
           "label": "FM Transport External IPv4 address",
-          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
-        },
-        {
-          "name": "OMNIA_RDS_TAG",
-          "label": "Omnia RDS software version tag",
-          "description": "Version of software. Leave blank to use default."
-        },
-        {
-          "name": "OMNIA_RDS_HTTP_PORT",
-          "label": "Omnia RDS Web Interface TCP Port",
-          "description": "TCP Port used to run the web server that serves the GUI and API."
-        },
-        {
-          "name": "OMNIA_RDS_IFACE_AOIP_IPV4_ADDRESS",
-          "label": "Omnia RDS AoIP IPv4 address",
-          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
-        },
-        {
-          "name": "OMNIA_RDS_IFACE_EXT_IPV4_ADDRESS",
-          "label": "Omnia RDS External IPv4 address",
           "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
         }
       ]
