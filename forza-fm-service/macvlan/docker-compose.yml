@@ -24,7 +24,7 @@ services:
       telosmacvlan:
         ipv4_address: ${FORZA_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
-      - /opt/telos/forza-fm-${INSTANCE_NAME}/forza_data:/data
+      - /opt/telos/forza-fm-${STACK_NAME}/forza_data:/data
 
   fm-transport:
     image: ${REPOSITORY:-quay.io/telosalliance/fm-transport}:${FM_TRANSPORT_TAG:-latest}
