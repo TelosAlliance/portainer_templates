@@ -2,6 +2,11 @@
 
 This change log contains the history of changes to the Portainer Templates.
 
+## 1.3.8
+
+* Generic changes:
+  * Removed dual-macvlan templates due to a Docker issue that causes internal NIC names to be unpredictable, leading to telosmacvlan/ext1macvlan mapping flips. As products implement IP-based mapping, Telos Alliance will restore dual-macvlan templates.
+
 ## 1.3.7
 
 * Generic changes:
