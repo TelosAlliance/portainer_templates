@@ -129,45 +129,7 @@
       ]
     },
     {
-    "id": 5,
-      "type": 3,
-      "title": "Axia Altus (dual-macvlan)",
-      "description": "Altus console with `dual-macvlan` networking",
-      "categories": [
-        "axia",
-        "altus",
-        "dual-macvlan"
-      ],
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "altus/dual-macvlan/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "TAG",
-          "label": "Software version tag",
-          "description": "Version of software. Leave blank to use default."
-        },
-        {
-          "name": "INSTANCE_NAME",
-          "label": "Container name",
-          "description": "Set the container name, hostname and studio (if applicable)."
-        },
-        {
-          "name": "IFACE_AOIP_IPV4_ADDRESS",
-          "label": "AoIP IPv4 address",
-          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
-        },
-        {
-          "name": "IFACE_EXT_IPV4_ADDRESS",
-          "label": "External IPv4 address",
-          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
-        }
-      ]
-    },
-    {
-      "id": 6,
+      "id": 5,
       "type": 3,
       "title": "Telos VXS (host)",
       "description": "Telos VXS VoIP Phone System with `host` networking",
@@ -210,7 +172,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 6,
       "type": 3,
       "title": "Telos VXS (macvlan)",
       "description": "Telos VXS VoIP Phone System with `macvlan` networking",
@@ -258,7 +220,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 7,
       "type": 3,
       "title": "Telos Zephyr Connect (host)",
       "description": "Telos Zephyr Connect Codec with `host` networking",
@@ -296,7 +258,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": 8,
       "type": 3,
       "title": "Telos Zephyr Connect (macvlan)",
       "description": "Telos Zephyr Connect Codec with `single macvlan` networking",
@@ -329,7 +291,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": 9,
       "type": 3,
       "title": "Omnia Forza HDS (host)",
       "description": "Omnia Forza HDS audio processor with `host` networking",
@@ -392,7 +354,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": 10,
       "type": 3,
       "title": "Omnia Forza HDS (macvlan)",
       "description": "Omnia Forza HDS audio processor with `macvlan` networking",
@@ -455,7 +417,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 11,
       "type": 3,
       "title": "Omnia Forza FM Service (macvlan)",
       "description": "Omnia Forza FM service with `macvlan` networking",
@@ -533,7 +495,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 12,
       "type": 3,
       "title": "PTP4L (host)",
       "description": "Precision Time Protocol Daemon for Linux with `host` networking",
@@ -566,7 +528,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 13,
       "type": 3,
       "title": "PTP4L (macvlan)",
       "description": "Precision Time Protocol Daemon for Linux with `macvlan` networking",
@@ -604,7 +566,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 14,
       "type": 3,
       "title": "WebRTC Service (macvlan)",
       "description": "Proxy service connected to the telosmacvlan network",
