@@ -2,6 +2,11 @@
 
 This change log contains the history of changes to the Portainer Templates.
 
+## 1.3.12
+
+* Generic changes:
+  * Fix missing rename of DOMAINNAME to CERT_DOMAIN in templates-v3.json for the WebRTC Service (macvlan) [Ticket 25373]
+
 ## 1.3.11
 
 * Generic changes:

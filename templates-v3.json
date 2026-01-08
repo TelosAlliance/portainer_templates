@@ -970,7 +970,7 @@
           "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         },
         {
-          "name": "DOMAINNAME",
+          "name": "CERT_DOMAIN",
           "label": "Domain Name",
           "description": "Domain a certification will be requested for."
         },
