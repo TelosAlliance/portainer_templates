@@ -399,7 +399,7 @@
       "platform": "linux",
       "repository": {
         "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "zephyr-connect/single-macvlan/docker-compose.yml"
+        "stackfile": "zephyr-connect/macvlan/docker-compose.yml"
       },
       "env": [
         {
