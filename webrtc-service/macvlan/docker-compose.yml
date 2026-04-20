@@ -64,20 +64,22 @@ services:
       - /opt/telos/coturn-${STACK_NAME}/coturn_data:/var/lib/coturn:z
       - /opt/telos/nginx-${STACK_NAME}/ssl:/certs:ro
 
-  beacon:
+  spotlight:
     depends_on: 
      - ta_auto_proxy
-    image: ${REPOSITORY:-quay.io/telosalliance/beacon}:${BEACON_TAG:-latest}
-    container_name: beacon-${STACK_NAME}
-    hostname: beacon-${STACK_NAME}
+    image: ${REPOSITORY:-quay.io/telosalliance/spotlight}:${SPOTLIGHT_TAG:-latest}
+    container_name: spotlight-${STACK_NAME}
+    hostname: spotlight-${STACK_NAME}
     restart: unless-stopped
     environment:
+      - HTTPPORT=${SPOTLIGHT_HTTPPORT:-80}
+      - BEACONURL=https://${CERT_DOMAIN}
       - TA_AUTO_PROXY=true
     networks:
       telosmacvlan:
-           ipv4_address: ${BEACON_IFACE_AOIP_IPV4_ADDRESS}
+           ipv4_address: ${SPOTLIGHT_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
-      - /opt/telos/beacon-${STACK_NAME}:/config:z
+      - /opt/telos/spotlight-${STACK_NAME}:/config:z
       - /etc/telos:/etc/telos:ro
       
 networks:

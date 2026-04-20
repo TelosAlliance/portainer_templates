@@ -1,0 +1,20 @@
+services:
+  spotlight:
+    image: ${REPOSITORY:-quay.io/telosalliance/spotlight}:${TAG:-latest}
+    container_name: spotlight-${INSTANCE_NAME}
+    hostname: spotlight-${INSTANCE_NAME}
+    restart: unless-stopped
+    environment:
+      - HTTPPORT=${HTTPPORT:-80}
+      - BEACONURL=https://${BEACONURL}
+    networks:
+      telosmacvlan:
+           ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
+    volumes:
+      - /opt/telos/spotlight-${INSTANCE_NAME}:/config:z
+      - /etc/telos:/etc/telos:ro
+
+networks:
+  telosmacvlan:
+    name: telosmacvlan
+    external: true
