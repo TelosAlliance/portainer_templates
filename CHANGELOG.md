@@ -2,6 +2,14 @@
 
 This change log contains the history of changes to the Portainer Templates.
 
+## 1.3.13
+
+* Generic changes:
+  * Replace Beacon with Spotlight
+
+* Spotlight:
+  * Add support for BEACONURL and HTTPPORT environment variables.
+
 ## 1.3.12
 
 * Generic changes:
@@ -25,7 +33,7 @@ This change log contains the history of changes to the Portainer Templates.
 
 ## 1.3.8
 
-* GitHub release skipped.
+* Skipped release.
 
 ## 1.3.7
 
@@ -63,20 +71,20 @@ This change log contains the history of changes to the Portainer Templates.
 
 ## 1.3.5
 
-* Update PDMX templates with dual-macvlan
-* Update Host PDMX templates to be able to specify a specific NIC for AoIP
+* Update PDMx templates with dual-macvlan
+* Update Host PDMx templates to be able to specify a specific NIC for AoIP
 
 ## 1.3.4
 
-* Release Portainer templates V3
+* Release Portainer templates v3
 
 ## 1.3.3
 
-* Correct Forza HDS Dual Macvlan
+* Correct Forza HDS dual macvlan
 
 ## 1.3.2
 
-* Release PDMX
+* Release PDMx
 
 ## 1.3.1
 
@@ -111,7 +119,7 @@ This change log contains the history of changes to the Portainer Templates.
 * Add PTP-Snooping support or VXS
 * Add non-root support for Forza
 * Update environment variables for Forza
-* Add PDMX to internal-templates-v2.json
+* Add PDMx to internal-templates-v2.json
 * Correct NDI issue in Altus
 * Add Infinity Link to internal-templates-v2.json
 * Correct Zephyr Connect to be functional

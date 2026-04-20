@@ -1020,13 +1020,18 @@
           "description": "Highest number port used for TURN connection. Leave this blank to use the default port number (65535) which works with most firewalls."
         },
         {
-          "name": "BEACON_TAG",
-          "label": "Beacon software version tag",
+          "name": "SPOTLIGHT_TAG",
+          "label": "Spotlight software version tag",
           "description": "Version of software. Leave blank to use default."
         },
         {
-          "name": "BEACON_IFACE_AOIP_IPV4_ADDRESS",
-          "label": "Beacon AoIP IPv4 address",
+          "name": "SPOTLIGHT_HTTPPORT",
+          "label": "Spotlight Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API."
+        },
+        {
+          "name": "SPOTLIGHT_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "Spotlight AoIP IPv4 address",
           "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
@@ -1133,13 +1138,18 @@
           "description": "Highest number port used for TURN connection. Leave this blank to use the default port number (65535) which works with most firewalls."
         },
         {
-          "name": "BEACON_TAG",
-          "label": "Beacon software version tag",
+          "name": "SPOTLIGHT_TAG",
+          "label": "Spotlight software version tag",
           "description": "Version of software. Leave blank to use default."
         },
         {
-          "name": "BEACON_IFACE_AOIP_IPV4_ADDRESS",
-          "label": "Beacon AoIP IPv4 address",
+          "name": "SPOTLIGHT_HTTPPORT",
+          "label": "Spotlight Web Interface TCP Port",
+          "description": "TCP Port used to run the web server that serves the GUI and API."
+        },
+        {
+          "name": "SPOTLIGHT_IFACE_AOIP_IPV4_ADDRESS",
+          "label": "Spotlight AoIP IPv4 address",
           "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
         }
       ]
