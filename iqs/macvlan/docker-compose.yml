@@ -11,6 +11,7 @@ services:
       - NET_ADMIN
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/iqs-{INSTANCE_NAME}/config:/config

@@ -7,8 +7,10 @@ services:
       - SYS_NICE
     environment:
       - DEVTYPE=vip16
+      - NETIF_AOIP=eth0
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${IPV4_ADDRESS}
     volumes:
       - config:/config

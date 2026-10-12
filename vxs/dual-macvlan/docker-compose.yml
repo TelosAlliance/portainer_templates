@@ -15,13 +15,15 @@ services:
     cap_drop:
       - all
     environment:
-      - IFACE_AOIP_SYNC=${IFACE_AOIP_SYNC:-eth1}
+      - IFACE_AOIP_SYNC=${IFACE_AOIP_SYNC:-eth0}
       - SYNC_CLOCK=${SYNC_CLOCK:-ptp-snooping}
-      - SYNC_PTP_DOMAIN=${SYNC_PTP_DOMAN:-0}
+      - SYNC_PTP_DOMAIN=${SYNC_PTP_DOMAIN:-0}
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
       ext1macvlan:
+        interface_name: eth1
         ipv4_address: ${IFACE_EXT_IPV4_ADDRESS}
     volumes:
       - /dev/log:/dev/log

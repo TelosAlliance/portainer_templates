@@ -8,6 +8,7 @@ services:
     privileged: true
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/ptp-${INSTANCE_NAME}/dev/log:/dev/log

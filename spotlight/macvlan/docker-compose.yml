@@ -9,7 +9,8 @@ services:
       - BEACONURL=https://${BEACONURL}
     networks:
       telosmacvlan:
-           ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
+        interface_name: eth0
+        ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/spotlight-${INSTANCE_NAME}:/config:z
       - /etc/telos:/etc/telos:ro

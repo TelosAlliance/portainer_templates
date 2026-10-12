@@ -2,9 +2,9 @@
 
 ## Scope
 
-Telos Alliance's portainer templates are used to deploy Telos Alliance container products. These templates **SHOULD** only be used as part of the [Telos Alliance Container Setup Tool (TACST)](https://gitlab.zephyr.com/devops/conman) or [VIP System](https://gitlab.zephyr.com/intercom/intercom-docker).
+Telos Alliance's portainer templates are used to deploy Telos Alliance container products. These templates **SHOULD** only be used as part of the Telos Alliance Container Setup Tool (TACST) or Infinity VIP System.
 
-These templates will not work on other systems. If a container product is being deployed with out TACST or VIP please reference the [Docker Compose files](https://gitlab.zephyr.com/devops/docker-compose) and product specific information.
+These templates will not work on other systems. If a container product is being deployed without TACST or VIP please reference the [Docker Compose files](https://github.com/TelosAlliance/portainer_templates) and product specific information.
 
 ## What are Portainer templates?
 
@@ -14,7 +14,7 @@ Portainer has an option where you can create predetermined templates to easily d
 
 Portainer pulls the templates in over the internet from the Telos Alliance GitHub server for production and the GitLab server for development. Each template file in this project has a unique purpose. The templates a system use can be changed by adjusting the URL in the Portianer UI. The next sections explain the purpose of each template, and the how to change between templates.
 
-Since templates are delivered by pulling on a URL from GitLab Portainer templates are updated in customer system as soon as changes are pushed to master. As such the any change pushed to master will be live for testing.
+Production templates and Compose files are delivered from this public GitHub repository. Changes published to `main` become available to customer systems immediately.
 
 ```mermaid
 flowchart TD
@@ -63,13 +63,23 @@ flowchart TD
 
 ### templates-v3.json
 
-templates-v3.json is the standard production template for Telos Alliance Container Setup Tool. Products listed in templates-v3.json **MUST** be fully released by Telos Alliance. All customers with TACST will get this update as soon as it is on main.
+templates-v3.json is the standard production template for Telos Alliance Container Setup Tool. Products listed in templates-v3.json are fully released by Telos Alliance. All customers with TACST will get this update as soon as it is on main.
+
+### beta-templates-v3.json (ex internal-templates)
+
+beta-templates-v3.json includes pre-release products, feature updates, and legacy products. It **MUST** only be used under Telos Alliance or authorized partner supervision, not as the default production catalog.
 
 ### vip-templates-v3.json
 
-vip-templates-v3.json is the standard production template for VIP Systems. Products listed in vip-templates-v3.json **MUST** be fully released by Telos Alliance. All customers with VIP systems will get this update as soon as it is on master.
+vip-templates-v3.json is the standard production template for VIP Systems. Products listed in vip-templates-v3.json are fully released by Telos Alliance. All customers with VIP systems will get this update as soon as it is on main.
 
 VIP has special templates to support additional VIP Products (Panels, VIP Server, and Dashboard) only available to VIP customers. There are also some special considerations for general products, like VXS, that must be accounted for in VIP system.
+
+## Deployment requirements
+
+Release 1.3.14 targets Docker Engine 28 or later. Updated macvlan Compose files use `interface_name` to assign `eth0` to `telosmacvlan` and `eth1` to `ext1macvlan` where declared, rather than relying on network attachment order. Docker Compose CLI deployments require version 2.36.0 or later; Portainer deployments must also support this Compose attribute. Confirm deployment-tool compatibility before updating a customer system. These assignments remove the need for the previous Docker 27 downgrade workaround.
+
+Legacy v2/internal catalogs are retained but are not part of this v3 promotion. They contain historical Compose references that require separate path validation before use.
 
 ## How to change templates in a product
 

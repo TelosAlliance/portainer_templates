@@ -10,6 +10,7 @@ services:
       - IFACE_AOIP=${IFACE_AOIP:-eth0}
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/fm-transport-${INSTANCE_NAME}/data:/data

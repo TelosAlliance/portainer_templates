@@ -22,6 +22,7 @@ services:
       - EX_RT_CPU=${EX_RT_CPU}
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/forza-fm-${INSTANCE_NAME}/forza_data:/data

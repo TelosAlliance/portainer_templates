@@ -10,9 +10,10 @@ services:
     environment:
       - DEVTYPE=link${LINK_COUNT:-8}
       - LICENSESERVER
-      - NETIF_AOIP=${IFACE_AOIP:-eth0}
+      - NETIF_AOIP=eth0
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/link-${INSTANCE_NAME}/config:/config

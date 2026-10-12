@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${NGINX_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/nginx-${STACK_NAME}/conf.d:/etc/nginx/conf.d 
@@ -35,6 +36,7 @@ services:
       - NGINX_CONTAINER_NAME=nginx-${STACK_NAME}
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${ACME_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/acme-${STACK_NAME}:/acme.sh

@@ -2,6 +2,23 @@
 
 This change log contains the history of changes to the Portainer Templates.
 
+## 1.3.15
+
+* Generic changes:
+  * Fix some dual-macvlan tags being macvlan instead.
+* Spotlight:
+  * Add interface_name to compose files for consistency.
+
+## 1.3.14
+
+* Generic changes:
+  * Promoted tested Compose and v3 template changes from GitLab development, retaining GitHub repository URLs and existing legacy catalogs.
+  * Renamed Coturn (macvlan) to Coturn (telosmacvlan) and added the ext1macvlan variant.
+  * New Coturn macvlan variants accept CERT_DOMAIN from v3 templates, with DOMAINNAME retained as a legacy fallback.
+  * [#26027] Added interface_name to updated macvlan network attachments for predictable interface naming, removing the need to downgrade to Docker v27 for dual-macvlan. Docker Compose CLI deployments require v2.36.0 or later; Portainer must support this attribute.
+* VXs:
+  * [#23306] Resolved SYNC_PTP_DOMAN typo in docker-compose files
+
 ## 1.3.13
 
 * Generic changes:

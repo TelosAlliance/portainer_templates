@@ -2162,7 +2162,7 @@
     {
       "id": 43,
       "type": 3,
-      "title": "Coturn (macvlan)",
+      "title": "Coturn (telosmacvlan)",
       "description": "Local STUN and TURN server to support WebRTC enabled products",
       "categories": [
         "linux",
@@ -2172,7 +2172,7 @@
       "platform": "linux",
       "repository": {
         "url": "https://github.com/TelosAlliance/portainer_templates",
-        "stackfile": "coturn/macvlan/docker-compose.yml"
+        "stackfile": "coturn/telosmacvlan/docker-compose.yml"
       },
       "env": [
         {
@@ -2225,6 +2225,69 @@
     {
       "id": 44,
       "type": 3,
+      "title": "Coturn (ext1macvlan)",
+      "description": "Local STUN and TURN server to support WebRTC enabled products",
+      "categories": [
+        "linux",
+        "open-source",
+        "macvlan"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/TelosAlliance/portainer_templates",
+        "stackfile": "coturn/ext1macvlan/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TAG",
+          "label": "Software version tag",
+          "description": "Version of software. Leave blank to use default."
+        },
+        {
+          "name": "INSTANCE_NAME",
+          "label": "Container name",
+          "description": "Set the container name, hostname and studio (if applicable)."
+        },
+        {
+          "name": "CERT_DOMAIN",
+          "label": "Domain Name for host system",
+          "description": "This is the Domain Name you have assigned for the Proxy Server."
+        },
+        {
+          "name": "IFACE_EXT_IPV4_ADDRESS",
+          "label": "Container IP",
+          "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the ext1macvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "PUBLICIP",
+          "label": "Public IP",
+          "description": "The Public IP Address the network this container is connected to."
+        },
+        {
+          "name": "TURNUSERNAME",
+          "label": "Turn Username",
+          "description": "Username that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "TURNPASSWORD",
+          "label": "Turn Password",
+          "description": "Password that is used for authentication when TURN Connections are being made."
+        },
+        {
+          "name": "MINIMUMPORT",
+          "label": "Minimum Turn Port",
+          "description": "Lowest number port used for TURN connection. Leave this blank to use the default port number (49152) which works with most firewalls."
+        },
+        {
+          "name": "MAXIMUMPORT",
+          "label": "Maximum Turn Port",
+          "description": "Highest number port used for TURN connection. Leave this blank to use the default port number (65535) which works with most firewalls."
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "type": 3,
       "title": "PTP4L (host)",
       "description": "Precision Time Protocol Daemon for Linux with `host` networking",
       "categories": [
@@ -2256,7 +2319,7 @@
       ]
     },
     {
-      "id": 45,
+      "id": 46,
       "type": 3,
       "title": "PTP4L (macvlan)",
       "description": "Precision Time Protocol Daemon for Linux with `macvlan` networking",
@@ -2294,7 +2357,7 @@
       ]
     },
     {
-      "id": 46,
+      "id": 47,
       "type": 3,
       "title": "WebRTC Service (macvlan)",
       "description": "Proxy service connected to the telosmacvlan network",
@@ -2407,7 +2470,7 @@
       ]
     },
     {
-      "id": 47,
+      "id": 48,
       "type": 3,
       "title": "WebRTC Service (dual macvlan)",
       "description": "Proxy service  web server connect to the ext1macvlan and telosmacvlan network",

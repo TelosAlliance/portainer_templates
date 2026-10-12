@@ -6,16 +6,17 @@ services:
     restart: unless-stopped
     command: --log-file=stdout --realm=$$DomainName --server-name=$$DomainName --fingerprint --external-ip=$${ExternalIP:-$$(detect-external-ip)}/$$InternalIP --relay-ip=$${ExternalIP:-$$(detect-external-ip)}/$$InternalIP --min-port=$$MinimumPort --max-port=$$MaximumPort --user=$$TurnUsername:$$TurnPassword --lt-cred-mech --stale-nonce=0 --channel-lifetime=0
     environment:
-      - DomainName=${DOMAINNAME}
+      - DomainName=${CERT_DOMAIN:-${DOMAINNAME}}
       - InternalIP=${IFACE_AOIP_IPV4_ADDRESS}
       - ExternalIP=${PUBLICIP}
       - TurnUsername=${TURNUSERNAME}
       - TurnPassword=${TURNPASSWORD}
-      - MinimumPort=${MINIMUMPORT:-49152} 
+      - MinimumPort=${MINIMUMPORT:-49152}
       - MaximumPort=${MAXIMUMPORT:-65535}
     networks:
       telosmacvlan:
-        ipv4_address: ${COTURN_TELOSMACVLAN}
+        interface_name: eth0
+        ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/coturn-${INSTANCE_NAME}/coturn_data:/var/lib/coturn:z
       - /opt/telos/nginx-${INSTANCE_NAME}/ssl:/certs:ro

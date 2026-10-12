@@ -6,8 +6,10 @@ services:
     restart: unless-stopped
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${NGINX_IFACE_AOIP_IPV4_ADDRESS}
       ext1macvlan:
+        interface_name: eth1
         ipv4_address: ${NGINX_IFACE_EXT_IPV4_ADDRESS}
     volumes:
       - /opt/telos/nginx-${STACK_NAME}/conf.d:/etc/nginx/conf.d 
@@ -38,6 +40,7 @@ services:
       - NGINX_CONTAINER_NAME=nginx-${STACK_NAME}
     networks:
       ext1macvlan:
+        interface_name: eth1
         ipv4_address: ${ACME_IFACE_EXT_IPV4_ADDRESS}
     volumes:
       - /opt/telos/acme-${STACK_NAME}:/acme.sh
@@ -62,6 +65,7 @@ services:
       - MaximumPort=${MAXIMUMPORT:-65535}
     networks:
       ext1macvlan:
+        interface_name: eth1
         ipv4_address: ${COTURN_IFACE_EXT_IPV4_ADDRESS}
     volumes:
       - /opt/telos/coturn-${STACK_NAME}/coturn_data:/var/lib/coturn:z
@@ -80,7 +84,8 @@ services:
       - TA_AUTO_PROXY=true
     networks:
       telosmacvlan:
-           ipv4_address: ${SPOTLIGHT_IFACE_AOIP_IPV4_ADDRESS}
+        interface_name: eth0
+        ipv4_address: ${SPOTLIGHT_IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /opt/telos/spotlight-${STACK_NAME}:/config:z
       - /etc/telos:/etc/telos:ro

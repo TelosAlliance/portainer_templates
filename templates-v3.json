@@ -673,21 +673,6 @@
           "description": "Set the container names and hostnames of each container in the stack."
         },
         {
-          "name": "EX_CLOCK_SOURCE",
-          "label": "Audio timebase source",
-          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
-        },
-        {
-          "name": "EX_AOIP_CLOCK",
-          "label": "AoIP Clock Type",
-          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
-        },
-        {
-          "name": "EX_PTP_DOMAIN",
-          "label": "PTP domain number",
-          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
-        },
-        {
           "name": "FORZA_TAG",
           "label": "Forza FM software version tag",
           "description": "Version of software. Leave blank to use default."
@@ -701,6 +686,21 @@
           "name": "FORZA_IFACE_AOIP_IPV4_ADDRESS",
           "label": "Forza FM AoIP IPv4 address",
           "description": "REQUIRED. Static IPv4 address assigned to the interface assigned to the telosmacvlan bridge. Must be within the same subnet."
+        },
+        {
+          "name": "EX_CLOCK_SOURCE",
+          "label": "Audio timebase source",
+          "description": "Options: [ptp-snooping] Software PTP. Recommended in most cases | [clock-tai] OS TAI time | [/dev/ptp0] PTP hardware timestamp device"
+        },
+        {
+          "name": "EX_AOIP_CLOCK",
+          "label": "AoIP Clock Type",
+          "description": "Applies to 'ptp-snooping' only, type of clock packets to receive: [0] PTP | [1] Livewire"
+        },
+        {
+          "name": "EX_PTP_DOMAIN",
+          "label": "PTP domain number",
+          "description": "Set the PTP domain number. Applies to ptp-snooping with PTP clock only."
         },
         {
           "name": "FORZA_EX_RT_CPU",

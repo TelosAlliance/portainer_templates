@@ -19,8 +19,10 @@ services:
       - SYS_NICE
     environment:
       - STUDIO=${INSTANCE_NAME}
+      - IFACE_AOIP=${IFACE_AOIP:-eth0}
     networks:
       telosmacvlan:
+        interface_name: eth0
         ipv4_address: ${IFACE_AOIP_IPV4_ADDRESS}
     volumes:
       - /dev/log:/dev/log
