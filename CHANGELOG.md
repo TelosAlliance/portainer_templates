@@ -2,6 +2,11 @@
 
 This change log contains the history of changes to the Portainer Templates.
 
+## 1.3.16
+
+* Generic changes:
+  * Improve App Templates tooltips.
+
 ## 1.3.15
 
 * Generic changes:
