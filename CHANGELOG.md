@@ -2,6 +2,11 @@
 
 This change log contains the history of changes to the Portainer Templates.
 
+## 1.3.17
+
+* VXs
+  * Change IFACE_AOIP_SYNC to IFACE_AOIP_PTP. This is not standard but VXs 1.4.19 uses this one rather than the standard one. This will be reverted in a future VXs update.
+
 ## 1.3.16
 
 * Generic changes:

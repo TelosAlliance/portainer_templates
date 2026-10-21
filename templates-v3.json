@@ -231,7 +231,7 @@
           "description": "REQUIRED. Set the container name, hostname and studio (if applicable)."
         },
         {
-          "name": "IFACE_AOIP_SYNC",
+          "name": "IFACE_AOIP_PTP",
           "label": "AoIP clock network interface",
           "description": "REQUIRED. Network interface for AoIP traffic, including clock synchronization where used. (eg: eth0, eno1, enp1s0)"
         },

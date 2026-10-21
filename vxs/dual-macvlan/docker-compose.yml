@@ -15,7 +15,7 @@ services:
     cap_drop:
       - all
     environment:
-      - IFACE_AOIP_SYNC=${IFACE_AOIP_SYNC:-eth0}
+      - IFACE_AOIP_PTP=${IFACE_AOIP_PTP:-eth0}
       - SYNC_CLOCK=${SYNC_CLOCK:-ptp-snooping}
       - SYNC_PTP_DOMAIN=${SYNC_PTP_DOMAIN:-0}
     networks:
